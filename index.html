@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Megaserigrafica POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-icons"> <span onclick="abrirCamara()">📷</span> </div>
+        <div class="header-center" id="titulo-header">Bienvenido</div>
+        <div class="header-icons"> <span>☰</span> </div>
+    </header>
+
+    <div id="pantalla-menu" class="pantalla activa">
+        <div class="modulo ventas" onclick="irAVentas()">📟<br>Venta</div>
+        <div class="modulo reportes">📊<br>Reportes</div>
+        <div class="modulo inventario">📦<br>Inventario</div>
+        <div class="modulo clientes">👥<br>Clientes</div>
+        <div class="modulo configuracion">⚙️<br>Configuración</div>
+        <div class="modulo pendientes">📋<br>Pendientes</div>
+    </div>
+
+    <div id="pantalla-ventas" class="pantalla">
+        <div class="info-bar">
+            <span>Empleado: Administrador</span>
+            <span>Nota: 0000002</span>
+        </div>
+        
+        <div class="contenedor-ventas">
+            <div class="col-ticket" id="lista-ticket"></div>
+
+            <div class="col-productos">
+                <button class="btn-regresar" onclick="irAMenu()">← Regresar</button>
+                
+                <div id="vista-categorias">
+                    <div class="btn-categoria cat-azul" onclick="mostrarProductos('playeras')">Categoría #1</div>
+                    <div class="btn-categoria cat-rojo" onclick="mostrarProductos('tintas')">Categoría #2</div>
+                </div>
+
+                <div id="vista-articulos" style="display: none;">
+                    <button class="btn-regresar-cat" onclick="volverACategorias()">← Volver</button>
+                    <div id="contenedor-items"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="total-box">
+                <p>Publico en General</p>
+                <p>Total <span id="txt-total">$0.00</span></p>
+            </div>
+            <button class="btn-cobrar" onclick="cobrar()">Cobrar</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
