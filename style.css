@@ -32,5 +32,10 @@ header { background-color: #0a0e1a; color: white; padding: 15px; display: flex; 
 .btn-articulo { background: white; border: 1px solid #ddd; padding: 12px; border-radius: 8px; margin-bottom: 8px; display: flex; flex-direction: column; }
 
 footer { background: white; border-top: 1px solid #ccc; padding: 12px; display: flex; align-items: center; }
-.total-box span { font-size: 22px; font-weight: bold; color: #d9534f; }
+.total-box span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff3b30;
+}
+
 .btn-cobrar { background: #1a438e; color: white; border: none; padding: 15px 25px; border-radius: 10px; font-weight: bold; }
