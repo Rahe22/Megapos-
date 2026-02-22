@@ -24,7 +24,7 @@ header { background-color: #0a0e1a; color: white; padding: 15px; display: flex; 
 .col-productos { width: 55%; overflow-y: auto; padding: 10px; background-color: #e9ecef; }
 
 /* Estilo Deslizar (Swipe) */
-.item-ticket-wrapper { position: relative; overflow: hidden; margin-bottom: 3px; background-color: #ff3b30; border-radius: 8px; }
+.item-ticket-wrapper { position: relative; overflow: hidden; margin-bottom: 5px; border-radius: 8px;}
 .item-ticket { display: flex;
     justify-content: space-between;
     align-items: center;
