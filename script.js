@@ -44,6 +44,8 @@ function agregarArticulo(nombre, precio) {
     if (existe) existe.cantidad++;
     else carrito.push({ id: Date.now(), nombre, precio, cantidad: 1 });
     renderizarTicket();
+      alert("Se agregó producto");
+    renderizarTicket();
 }
 
 function renderizarTicket() {
