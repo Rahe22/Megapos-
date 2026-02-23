@@ -1,3 +1,4 @@
+console.log("VERSION NUEVA 1");
 let totalVenta = 0;
 let carrito = [];
 let touchStartX = 0;
