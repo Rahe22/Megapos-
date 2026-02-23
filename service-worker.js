@@ -1,4 +1,4 @@
-const CACHE_NAME = "megapos-v2";
+const CACHE_NAME = "megapos-v21";
 
 const urlsToCache = [
   "index.html",
