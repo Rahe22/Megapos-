@@ -68,6 +68,7 @@ function renderizarTicket() {
         lista.appendChild(wrapper);
     });
     document.getElementById('txt-total').innerText = '$' + totalVenta.toFixed(2);
+    document.getElementById('txt-total-footer').innerText = '$' + totalVenta.toFixed(2);
 }
 
 function cambiarCantidad(id, delta) {
