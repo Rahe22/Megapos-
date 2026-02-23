@@ -29,6 +29,7 @@ header { background-color: #0a0e1a; color: white; padding: 15px; display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 8px 10px;
+    font-size: 14px;
     background: white;
     border-radius: 8px;
     margin-bottom: 6px;
@@ -39,7 +40,11 @@ header { background-color: #0a0e1a; color: white; padding: 15px; display: flex; 
 
 /* Botones y Cantidades */
 .controles-cantidad { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
-.controles-cantidad button { background: #f0f2f5; border: 1px solid #ddd; border-radius: 5px; width: 24px; height: 24px; color: #1a438e; font-weight: bold; }
+.controles-cantidad button { background: #f0f2f5; border: 1px solid #ddd; border-radius: 5px; width: 22px; height: 22px; color: #1a438e; font-weight: bold; font-size: 12px; }
+.item-ticket b {
+    font-size: 14px;
+    font-weight: 600;
+}
 .btn-categoria { width: 100%; padding: 25px; margin-bottom: 12px; border-radius: 12px; color: white; font-weight: bold; text-align: center; }
 .cat-azul { background-color: #1a438e; } .cat-rojo { background-color: #5a1a1a; }
 .btn-articulo { background: white; border: 1px solid #ddd; padding: 12px; border-radius: 8px; margin-bottom: 8px; display: flex; flex-direction: column; }
