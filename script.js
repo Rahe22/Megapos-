@@ -43,9 +43,7 @@ function agregarArticulo(nombre, precio) {
     const existe = carrito.find(i => i.nombre === nombre);
     if (existe) existe.cantidad++;
     else carrito.push({ id: Date.now(), nombre, precio, cantidad: 1 });
-    renderizarTicket();
-      alert("Se agregó producto");
-    renderizarTicket();
+    
 }
 
 function renderizarTicket() {
