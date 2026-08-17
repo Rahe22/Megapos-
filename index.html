@@ -1,62 +1,920 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MegaPOS</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Megaserigrafica — materiales profesionales para serigrafía."
+  >
+
+  <title>Megaserigrafica | Cyber-Craft</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <div onclick="irAMenu()">☰</div>
-    <div class="header-center" id="titulo-header">Bienvenido</div>
-    <div></div>
-</header>
+  <div class="noise"></div>
 
-<!-- MENU -->
-<div id="pantalla-menu" class="pantalla activa">
-    <div class="modulo ventas" onclick="irAVentas()">Ventas</div>
-    <div class="modulo reportes">Reportes</div>
-    <div class="modulo inventario">Inventario</div>
-    <div class="modulo clientes">Clientes</div>
-    <div class="modulo configuracion">Configuración</div>
-    <div class="modulo pendientes">Pendientes</div>
-</div>
+  <!-- ================= HEADER ================= -->
 
-<!-- VENTAS -->
-<div id="pantalla-ventas" class="pantalla">
-    <div class="info-bar">
-        <span id="numero-nota">Nota #1</span>
+  <header class="site-header">
+
+    <a href="#inicio" class="brand">
+
+      <span class="brand-mark">M</span>
+
+      <span>
+        MEGA<span>SERIGRAFICA</span>
+      </span>
+
+    </a>
+
+    <nav class="desktop-nav">
+
+      <a href="#catalogo">Catálogo</a>
+
+      <a href="#servicios">
+        Estudio de diseño
+      </a>
+
+      <a href="#confianza">
+        Nosotros
+      </a>
+
+    </nav>
+
+    <div class="header-actions">
+
+      <button
+        class="icon-btn"
+        id="searchBtn"
+        aria-label="Buscar"
+      >
+        ⌕
+      </button>
+
+      <button
+        class="cart-btn"
+        id="cartBtn"
+      >
+        Carrito
+
+        <span id="cartCount">
+          0
+        </span>
+
+      </button>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Abrir menú"
+      >
+        ☰
+      </button>
+
     </div>
 
-    <div class="contenedor-ventas">
-        <div class="col-ticket">
-            <div id="lista-ticket"></div>
+  </header>
+
+
+  <!-- ================= CONTENIDO ================= -->
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+
+      <div class="hero-grid"></div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          <span></span>
+          SERIGRAFÍA PROFESIONAL / MATERIAL & PRECISIÓN
+        </p>
+
+        <h1>
+          Tu impresión.<br>
+          <em>Sin límites.</em>
+        </h1>
+
+        <p class="hero-copy">
+
+          Insumos, herramientas y tecnología
+          para llevar cada impresión de la idea
+          al acabado profesional.
+
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#catalogo"
+            class="btn btn-primary"
+          >
+            Explorar catálogo
+            <span>↗</span>
+          </a>
+
+          <a
+            href="#servicios"
+            class="btn btn-ghost"
+          >
+            Servicios de diseño
+          </a>
+
         </div>
 
-        <div class="col-productos">
-            <div id="vista-categorias">
-                <div class="btn-categoria cat-azul" onclick="mostrarProductos('playeras')">Playeras</div>
-                <div class="btn-categoria cat-rojo" onclick="mostrarProductos('tintas')">Tintas</div>
+
+        <div
+          class="trust-row"
+          id="confianza"
+        >
+
+          <div>
+
+            <strong>01</strong>
+
+            <span>
+              Envíos locales<br>
+              y nacionales
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <strong>02</strong>
+
+            <span>
+              Asesoría<br>
+              técnica
+            </span>
+
+          </div>
+
+
+          <div>
+
+            <strong>03</strong>
+
+            <span>
+              Entrega<br>
+              en tienda
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ARTE DEL HERO -->
+
+      <div
+        class="hero-art"
+        aria-hidden="true"
+      >
+
+        <div class="ink-orbit cyan-orbit"></div>
+
+        <div class="ink-orbit magenta-orbit"></div>
+
+        <div class="ink-orbit yellow-orbit"></div>
+
+
+        <div class="ink-can">
+
+          <div class="can-top"></div>
+
+          <div class="can-body">
+
+            <span>
+              INK
+            </span>
+
+            <small>
+              MEGA<br>
+              SERIGRAFICA
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-code">
+
+          MS / 001<br>
+          CYBER-CRAFT<br>
+          READY TO PRINT
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CATÁLOGO ================= -->
+
+    <section
+      class="catalog-section"
+      id="catalogo"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="eyebrow">
+
+            <span></span>
+            PRODUCT SYSTEM
+
+          </p>
+
+          <h2>
+
+            Catálogo
+            <em>profesional</em>
+
+          </h2>
+
+        </div>
+
+
+        <p>
+
+          Selecciona una categoría
+          y configura el material
+          que necesitas.
+
+        </p>
+
+      </div>
+
+
+      <div class="catalog-layout">
+
+
+        <!-- FILTROS -->
+
+        <aside class="filters-panel">
+
+          <p class="filter-label">
+            CATEGORÍAS
+          </p>
+
+
+          <button
+            class="category active"
+            data-category="all"
+          >
+
+            Todo
+
+            <span>
+              08
+            </span>
+
+          </button>
+
+
+          <button
+            class="category"
+            data-category="textile"
+          >
+
+            Tintas textiles
+
+            <span>
+              03
+            </span>
+
+          </button>
+
+
+          <button
+            class="category"
+            data-category="vinyl"
+          >
+
+            Tintas vinílicas
+
+            <span>
+              02
+            </span>
+
+          </button>
+
+
+          <button
+            class="category"
+            data-category="chemical"
+          >
+
+            Químicos
+
+            <span>
+              01
+            </span>
+
+          </button>
+
+
+          <button
+            class="category"
+            data-category="frame"
+          >
+
+            Marcos
+
+            <span>
+              01
+            </span>
+
+          </button>
+
+
+          <button
+            class="category"
+            data-category="squeegee"
+          >
+
+            Raseros
+
+            <span>
+              01
+            </span>
+
+          </button>
+
+
+          <div class="filter-divider"></div>
+
+
+          <p class="filter-label">
+            ORDENAR
+          </p>
+
+
+          <select id="sortSelect">
+
+            <option value="featured">
+              Destacados
+            </option>
+
+            <option value="priceAsc">
+              Precio menor
+            </option>
+
+            <option value="priceDesc">
+              Precio mayor
+            </option>
+
+          </select>
+
+        </aside>
+
+
+        <!-- PRODUCTOS -->
+
+        <div class="products-area">
+
+          <div class="toolbar">
+
+            <div
+              id="searchBox"
+              class="search-box hidden"
+            >
+
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Buscar tinta, marco, rasero..."
+              >
+
             </div>
 
-            <div id="vista-articulos" style="display:none;">
-                <button onclick="volverACategorias()">← Volver</button>
-                <div id="contenedor-items"></div>
-            </div>
+
+            <span id="resultCount">
+              8 productos
+            </span>
+
+
+            <button
+              class="mobile-filter"
+              id="mobileFilterBtn"
+            >
+
+              Filtros +
+
+            </button>
+
+          </div>
+
+
+          <div
+            class="products-grid"
+            id="productsGrid"
+          ></div>
+
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ESTUDIO DE DISEÑO ================= -->
+
+    <section
+      class="design-section"
+      id="servicios"
+    >
+
+      <div class="design-copy">
+
+        <p class="eyebrow">
+
+          <span></span>
+          MEGA DESIGN STUDIO
+
+        </p>
+
+
+        <h2>
+
+          De tu archivo
+          <br>
+          <em>a la tinta.</em>
+
+        </h2>
+
+
+        <p>
+
+          Preparamos tus archivos para producción
+          con separaciones de color profesionales
+          y vectorización precisa.
+
+        </p>
+
+
+        <div class="service-options">
+
+
+          <button
+            class="service active"
+            data-service="CMYK"
+          >
+
+            <b>
+              CMYK
+            </b>
+
+            <span>
+              Procesos de cuatro tintas
+            </span>
+
+          </button>
+
+
+          <button
+            class="service"
+            data-service="Simulado"
+          >
+
+            <b>
+              SIMULADO
+            </b>
+
+            <span>
+              Separación para tonos complejos
+            </span>
+
+          </button>
+
+
+          <button
+            class="service"
+            data-service="Indexado"
+          >
+
+            <b>
+              INDEXADO
+            </b>
+
+            <span>
+              Control preciso de color
+            </span>
+
+          </button>
+
+
+          <button
+            class="service"
+            data-service="Vector"
+          >
+
+            <b>
+              VECTOR
+            </b>
+
+            <span>
+              Redibujo y limpieza de archivos
+            </span>
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="upload-card">
+
+        <div class="upload-icon">
+          ＋
+        </div>
+
+
+        <h3>
+          Sube tu archivo
+        </h3>
+
+
+        <p>
+          AI, CDR, PDF o PSD
+        </p>
+
+
+        <input
+          type="file"
+          id="fileInput"
+          accept=".ai,.cdr,.pdf,.psd"
+        >
+
+
+        <label
+          for="fileInput"
+          class="btn btn-outline"
+        >
+
+          Seleccionar archivo
+
+        </label>
+
+
+        <span
+          id="fileName"
+          class="file-name"
+        >
+
+          Ningún archivo seleccionado
+
+        </span>
+
+
+        <div class="upload-line">
+
+          <span></span>
+
+          <span>
+            ARCHIVO SEGURO
+          </span>
+
+          <span></span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PROCESO ================= -->
+
+    <section class="process-section">
+
+      <div class="section-heading compact">
+
+        <div>
+
+          <p class="eyebrow">
+
+            <span></span>
+            FLUJO DE TRABAJO
+
+          </p>
+
+
+          <h2>
+
+            Simple.
+            <em>Preciso.</em>
+            Profesional.
+
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="process-grid">
+
+
+        <article>
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Elige
+          </h3>
+
+          <p>
+            Encuentra el insumo
+            que necesita tu producción.
+          </p>
+
+        </article>
+
+
+        <article>
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Configura
+          </h3>
+
+          <p>
+            Selecciona medidas,
+            malla, acabado o dureza.
+          </p>
+
+        </article>
+
+
+        <article>
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Pide
+          </h3>
+
+          <p>
+            Agrega al carrito
+            y envía tu orden por WhatsApp.
+          </p>
+
+        </article>
+
+
+        <article>
+
+          <span>
+            04
+          </span>
+
+          <h3>
+            Imprime
+          </h3>
+
+          <p>
+            Recibe tu material
+            o recógelo en sucursal.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-brand">
+
+      <span class="brand-mark">
+        M
+      </span>
+
+      <div>
+
+        <strong>
+          MEGASERIGRAFICA
+        </strong>
+
+        <small>
+          CYBER-CRAFT / PRINT SYSTEM
+        </small>
+
+      </div>
+
     </div>
 
-    <footer>
-        <div class="total-box">
-            Total: <span id="txt-total-footer">$0.00</span>
-        </div>
-        <button class="btn-cobrar" onclick="cobrar()">Cobrar</button>
-    </footer>
-</div>
 
-<script src="script.js"></script>
+    <p>
+      Materiales profesionales para serigrafía.
+    </p>
+
+
+    <span>
+
+      ©
+      <span id="year"></span>
+      Megaserigrafica
+
+    </span>
+
+  </footer>
+
+
+  <!-- ================= OVERLAY ================= -->
+
+  <div
+    class="overlay"
+    id="overlay"
+  ></div>
+
+
+  <!-- ================= CARRITO ================= -->
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+  >
+
+    <div class="drawer-head">
+
+      <div>
+
+        <p class="eyebrow">
+
+          <span></span>
+          ORDER SYSTEM
+
+        </p>
+
+        <h2>
+          Tu carrito
+        </h2>
+
+      </div>
+
+
+      <button
+        class="close-btn"
+        id="closeCart"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      id="cartItems"
+      class="cart-items"
+    ></div>
+
+
+    <div class="checkout">
+
+      <div class="total-row">
+
+        <span>
+          Total
+        </span>
+
+        <strong id="cartTotal">
+          $0.00 MXN
+        </strong>
+
+      </div>
+
+
+      <div class="delivery-options">
+
+        <label>
+
+          <input
+            type="radio"
+            name="delivery"
+            value="Sucursal"
+            checked
+          >
+
+          Retiro en sucursal
+
+        </label>
+
+
+        <label>
+
+          <input
+            type="radio"
+            name="delivery"
+            value="Domicilio"
+          >
+
+          Envío a domicilio
+
+        </label>
+
+      </div>
+
+
+      <button
+        class="btn btn-whatsapp"
+        id="whatsappBtn"
+      >
+
+        Pedir por WhatsApp
+
+        <span>
+          ↗
+        </span>
+
+      </button>
+
+
+      <button
+        class="clear-btn"
+        id="clearCart"
+      >
+
+        Vaciar carrito
+
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MODAL PRODUCTO ================= -->
+
+  <div
+    class="modal"
+    id="productModal"
+  >
+
+    <div class="modal-card">
+
+      <button
+        class="close-btn modal-close"
+        id="closeModal"
+      >
+        ×
+      </button>
+
+
+      <div id="modalContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="script.js"></script>
 
 </body>
 </html>
