@@ -1,596 +1,278 @@
-
 /* =========================================================
    MEGASERIGRAFICA
-   CYBER-CRAFT ECOMMERCE
-   JavaScript
+   SCRIPT PRINCIPAL
 ========================================================= */
 
 
 /* =========================================================
-   PRODUCTOS
+   CONFIGURACIÓN
 ========================================================= */
 
-const products = [
+const WHATSAPP_PEDIDOS = "525568089314";
 
-  {
-    id: 1,
-    name: "Plastisol Pro — Blanco",
-    category: "textile",
-    price: 285,
-    desc: "Tinta plastisol de alta opacidad para prendas claras.",
-    tag: "PLASTISOL",
-    accent: "cyan",
+const WHATSAPP_DISENO = "525574472298";
 
-    variants: {
-      Fondo: [
-        "Claro",
-        "Oscuro"
-      ],
 
-      Curado: [
-        "160°C",
-        "170°C"
-      ]
+/* =========================================================
+   PRODUCTOS DE EJEMPLO
+   Posteriormente sustituiremos estos por TODO tu catálogo
+========================================================= */
+
+const productos = [
+
+    {
+        id: 1,
+        nombre: "Tinta Ahulada Textil ECO",
+        categoria: "textil",
+        precio: 97,
+        descripcion:
+            "Tinta plastisol de viscosidad media para estampados textiles de alto volumen.",
+        tipo: "Plastisol",
+        color: "Blanco",
+        unidad: "1 kg"
+    },
+
+    {
+        id: 2,
+        nombre: "Tinta Vinílica Mate",
+        categoria: "vinil-mate",
+        precio: 160,
+        descripcion:
+            "Tinta vinílica de acabado mate para plásticos y materiales lisos.",
+        tipo: "Vinil Mate",
+        color: "Blanco",
+        unidad: "1 kg"
+    },
+
+    {
+        id: 3,
+        nombre: "Tinta Vinílica Brillante",
+        categoria: "vinil-brillante",
+        precio: 215,
+        descripcion:
+            "Tinta vinílica de acabado brillante para aplicaciones publicitarias.",
+        tipo: "Vinil Brillante",
+        color: "Blanco",
+        unidad: "1 kg"
+    },
+
+    {
+        id: 4,
+        nombre: "Solvente Xilol",
+        categoria: "solventes",
+        precio: 65,
+        descripcion:
+            "Solvente para diferentes procesos de limpieza y preparación.",
+        tipo: "Solvente",
+        color: "",
+        unidad: "1 litro"
+    },
+
+    {
+        id: 5,
+        nombre: "Sericrom",
+        categoria: "emulsiones",
+        precio: 175,
+        descripcion:
+            "Emulsión para preparación de marcos de serigrafía.",
+        tipo: "Emulsión",
+        color: "",
+        unidad: "1 litro"
+    },
+
+    {
+        id: 6,
+        nombre: "Racero 20 cm",
+        categoria: "raceros",
+        precio: 78,
+        descripcion:
+            "Racero para serigrafía de 20 cm.",
+        tipo: "Racero",
+        color: "",
+        unidad: "Pieza"
+    },
+
+    {
+        id: 7,
+        nombre: "Marco 40 × 50 — Malla T90",
+        categoria: "marcos",
+        precio: 95,
+        descripcion:
+            "Marco para serigrafía de 40 × 50 cm con malla T90.",
+        tipo: "Marco",
+        color: "",
+        unidad: "Pieza"
+    },
+
+    {
+        id: 8,
+        nombre: "Adhesivo Spray Excelink",
+        categoria: "otros",
+        precio: 115,
+        descripcion:
+            "Adhesivo en spray para aplicaciones de serigrafía.",
+        tipo: "Adhesivo",
+        color: "",
+        unidad: "270 g"
     }
-  },
-
-
-  {
-    id: 2,
-    name: "Plastisol Pro — Negro",
-    category: "textile",
-    price: 295,
-    desc: "Negro intenso para máxima definición y cobertura.",
-    tag: "PLASTISOL",
-    accent: "magenta",
-
-    variants: {
-      Fondo: [
-        "Claro",
-        "Oscuro"
-      ],
-
-      Curado: [
-        "160°C",
-        "170°C"
-      ]
-    }
-  },
-
-
-  {
-    id: 3,
-    name: "Base Agua — Blanco",
-    category: "textile",
-    price: 260,
-    desc: "Acabado suave, ideal para textiles de moda.",
-    tag: "BASE AGUA",
-    accent: "yellow",
-
-    variants: {
-      Fondo: [
-        "Claro",
-        "Oscuro"
-      ],
-
-      Curado: [
-        "150°C",
-        "160°C"
-      ]
-    }
-  },
-
-
-  {
-    id: 4,
-    name: "Vinílica Mate",
-    category: "vinyl",
-    price: 220,
-    desc: "Acabado mate uniforme para aplicaciones técnicas.",
-    tag: "VINÍLICA",
-    accent: "magenta",
-
-    variants: {
-      Acabado: [
-        "Mate",
-        "Brillante"
-      ]
-    }
-  },
-
-
-  {
-    id: 5,
-    name: "Vinílica Brillante",
-    category: "vinyl",
-    price: 235,
-    desc: "Acabado brillante con alta definición.",
-    tag: "VINÍLICA",
-    accent: "cyan",
-
-    variants: {
-      Acabado: [
-        "Mate",
-        "Brillante"
-      ]
-    }
-  },
-
-
-  {
-    id: 6,
-    name: "Removedor de Emulsión",
-    category: "chemical",
-    price: 185,
-    desc: "Químico profesional para recuperar tus marcos.",
-    tag: "QUÍMICO",
-    accent: "yellow",
-
-    variants: {
-      Presentación: [
-        "1 L",
-        "4 L"
-      ]
-    }
-  },
-
-
-  {
-    id: 7,
-    name: "Marco Aluminio",
-    category: "frame",
-    price: 420,
-    desc: "Marco profesional con selección de malla y medida.",
-    tag: "MARCO",
-    accent: "cyan",
-
-    variants: {
-      Malla: [
-        "43",
-        "62",
-        "77",
-        "90",
-        "120"
-      ],
-
-      Material: [
-        "Aluminio",
-        "Madera"
-      ]
-    }
-  },
-
-
-  {
-    id: 8,
-    name: "Rasero Pro",
-    category: "squeegee",
-    price: 390,
-    desc: "Rasero profesional con selección de dureza.",
-    tag: "RASERO",
-    accent: "magenta",
-
-    variants: {
-      Dureza: [
-        "65 Shore A",
-        "75 Shore A",
-        "85 Shore A"
-      ],
-
-      Medida: [
-        "20 cm",
-        "30 cm",
-        "40 cm"
-      ]
-    }
-  }
 
 ];
 
 
 /* =========================================================
-   ESTADO
+   CARRITO
 ========================================================= */
 
-let activeCategory = "all";
-
-let cart = JSON.parse(
-  localStorage.getItem("megaCart") || "[]"
-);
-
-let selectedProduct = null;
-
-let selectedVariants = {};
+let carrito = [];
 
 
 /* =========================================================
-   HELPERS
+   ELEMENTOS DEL DOM
 ========================================================= */
 
-const $ = (id) => {
+const productGrid =
+    document.querySelector("#productGrid");
 
-  return document.getElementById(id);
+const cartDrawer =
+    document.querySelector("#cartDrawer");
 
-};
+const cartItems =
+    document.querySelector("#cartItems");
+
+const cartTotal =
+    document.querySelector("#cartTotal");
+
+const cartCount =
+    document.querySelector("#cartCount");
+
+const cartButton =
+    document.querySelector("#cartButton");
+
+const cartClose =
+    document.querySelector("#cartClose");
+
+const overlay =
+    document.querySelector("#overlay");
 
 
-function money(number) {
+/* =========================================================
+   MOSTRAR PRODUCTOS
+========================================================= */
 
-  return new Intl.NumberFormat(
-    "es-MX",
-    {
-      style: "currency",
-      currency: "MXN"
+function mostrarProductos(lista = productos) {
+
+    if (!productGrid) return;
+
+    productGrid.innerHTML = "";
+
+    if (lista.length === 0) {
+
+        productGrid.innerHTML = `
+            <div class="no-results show">
+
+                <div class="no-results-icon">
+                    !
+                </div>
+
+                <h3>
+                    No encontramos productos
+                </h3>
+
+                <p>
+                    Prueba con otra categoría.
+                </p>
+
+            </div>
+        `;
+
+        return;
     }
-  ).format(number);
-
-}
 
 
-/* =========================================================
-   PRODUCTOS
-========================================================= */
+    lista.forEach(producto => {
 
-function renderProducts() {
+        const card =
+            document.createElement("article");
 
-  const searchInput = $("searchInput");
+        card.className = "product-card";
 
-  const search = searchInput
-    ? searchInput.value.toLowerCase().trim()
-    : "";
+        let visualClass = "visual-cyan";
+
+        if (
+            producto.categoria === "vinil-mate" ||
+            producto.categoria === "vinil-brillante"
+        ) {
+
+            visualClass = "visual-magenta";
+
+        }
+
+        if (
+            producto.categoria === "solventes" ||
+            producto.categoria === "emulsiones"
+        ) {
+
+            visualClass = "visual-yellow";
+
+        }
 
 
-  let list = products
-    .filter((product) => {
+        card.innerHTML = `
 
-      return (
-        activeCategory === "all" ||
-        product.category === activeCategory
-      );
+            <div
+                class="product-visual ${visualClass}"
+                data-product-id="${producto.id}"
+            >
 
-    })
-    .filter((product) => {
+                <span class="product-tag">
+                    ${producto.tipo}
+                </span>
 
-      return `${product.name}
-              ${product.desc}
-              ${product.tag}`
-        .toLowerCase()
-        .includes(search);
+                <div class="product-shape">
+
+                    ${producto.color || producto.tipo}
+
+                </div>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    ${producto.nombre}
+                </h3>
+
+                <p>
+                    ${producto.descripcion}
+                </p>
+
+
+                <div class="product-bottom">
+
+                    <span class="price">
+                        $${producto.precio.toFixed(2)} MXN
+                    </span>
+
+
+                    <button
+                        class="add-btn"
+                        onclick="agregarAlCarrito(${producto.id})"
+                        aria-label="Agregar al carrito"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        productGrid.appendChild(card);
 
     });
-
-
-  const sort = $("sortSelect").value;
-
-
-  if (sort === "priceAsc") {
-
-    list.sort(
-      (a, b) => a.price - b.price
-    );
-
-  }
-
-
-  if (sort === "priceDesc") {
-
-    list.sort(
-      (a, b) => b.price - a.price
-    );
-
-  }
-
-
-  $("resultCount").textContent =
-    `${list.length} producto${list.length !== 1 ? "s" : ""}`;
-
-
-  $("productsGrid").innerHTML =
-    list.map(productCard).join("");
-
-}
-
-
-/* =========================================================
-   TARJETA DE PRODUCTO
-========================================================= */
-
-function productCard(product) {
-
-  let shape = "product-shape";
-
-
-  if (product.category === "frame") {
-
-    shape = "frame-shape";
-
-  }
-
-
-  if (product.category === "squeegee") {
-
-    shape = "squeegee-shape";
-
-  }
-
-
-  if (product.category === "chemical") {
-
-    shape = "chemical-shape";
-
-  }
-
-
-  let shapeText = "INK";
-
-
-  if (product.category === "frame") {
-
-    shapeText = "";
-
-  }
-
-
-  if (product.category === "squeegee") {
-
-    shapeText = "";
-
-  }
-
-
-  if (product.category === "chemical") {
-
-    shapeText = "";
-
-  }
-
-
-  return `
-
-    <article class="product-card">
-
-
-      <div
-        class="product-visual visual-${product.accent}"
-        data-open="${product.id}"
-      >
-
-        <span class="product-tag">
-
-          ${product.tag}
-
-        </span>
-
-
-        <div class="${shape}">
-
-          ${shapeText}
-
-        </div>
-
-      </div>
-
-
-      <div class="product-info">
-
-
-        <h3>
-
-          ${product.name}
-
-        </h3>
-
-
-        <p>
-
-          ${product.desc}
-
-        </p>
-
-
-        <div class="product-bottom">
-
-
-          <strong class="price">
-
-            ${money(product.price)}
-
-          </strong>
-
-
-          <button
-            class="add-btn"
-            data-add="${product.id}"
-            aria-label="Agregar ${product.name}"
-          >
-
-            +
-
-          </button>
-
-
-        </div>
-
-      </div>
-
-
-    </article>
-
-  `;
-
-}
-
-
-/* =========================================================
-   GUARDAR CARRITO
-========================================================= */
-
-function saveCart() {
-
-  localStorage.setItem(
-    "megaCart",
-    JSON.stringify(cart)
-  );
-
-  renderCart();
-
-  updateCount();
-
-}
-
-
-/* =========================================================
-   CONTADOR
-========================================================= */
-
-function updateCount() {
-
-  const totalItems =
-    cart.reduce(
-      (total, item) =>
-        total + item.qty,
-      0
-    );
-
-
-  $("cartCount").textContent =
-    totalItems;
-
-}
-
-
-/* =========================================================
-   RENDER CARRITO
-========================================================= */
-
-function renderCart() {
-
-  const cartContainer =
-    $("cartItems");
-
-
-  if (!cart.length) {
-
-    cartContainer.innerHTML = `
-
-      <div class="empty-cart">
-
-        Tu carrito está vacío.
-
-        <br><br>
-
-        Agrega materiales
-        para comenzar.
-
-      </div>
-
-    `;
-
-
-    $("cartTotal").textContent =
-      money(0);
-
-
-    return;
-
-  }
-
-
-  cartContainer.innerHTML =
-
-    cart.map(
-      (item, index) => `
-
-      <div class="cart-item">
-
-
-        <div class="mini-visual">
-
-          M
-
-        </div>
-
-
-        <div>
-
-
-          <h4>
-
-            ${item.name}
-
-          </h4>
-
-
-          <small>
-
-            ${money(item.price)}
-            c/u
-
-          </small>
-
-
-          <div class="qty">
-
-
-            <button
-              data-dec="${index}"
-            >
-
-              −
-
-            </button>
-
-
-            <span>
-
-              ${item.qty}
-
-            </span>
-
-
-            <button
-              data-inc="${index}"
-            >
-
-              +
-
-            </button>
-
-
-          </div>
-
-
-        </div>
-
-
-        <button
-          class="remove"
-          data-remove="${index}"
-        >
-
-          Eliminar
-
-        </button>
-
-
-      </div>
-
-    `
-    ).join("");
-
-
-  const total =
-    cart.reduce(
-      (sum, item) =>
-        sum +
-        item.price *
-        item.qty,
-      0
-    );
-
-
-  $("cartTotal").textContent =
-    money(total);
 
 }
 
@@ -599,70 +281,244 @@ function renderCart() {
    AGREGAR AL CARRITO
 ========================================================= */
 
-function addToCart(
-  product,
-  variants = {}
-) {
+function agregarAlCarrito(id) {
 
-  const variantText =
-
-    Object.entries(variants)
-
-      .map(
-        ([key, value]) =>
-          `${key}: ${value}`
-      )
-
-      .join(" · ");
+    const producto =
+        productos.find(
+            producto => producto.id === id
+        );
 
 
-  const key =
-    product.id +
-    "|" +
-    variantText;
+    if (!producto) return;
 
 
-  const found =
-    cart.find(
-      (item) =>
-        item.key === key
-    );
+    const productoExistente =
+        carrito.find(
+            item => item.id === id
+        );
 
 
-  if (found) {
+    if (productoExistente) {
 
-    found.qty++;
+        productoExistente.cantidad++;
 
-  }
+    } else {
 
-  else {
+        carrito.push({
 
-    cart.push({
+            ...producto,
 
-      key,
+            cantidad: 1
 
-      id: product.id,
+        });
 
-      name:
-        product.name +
-        (
-          variantText
-            ? ` — ${variantText}`
-            : ""
-        ),
+    }
 
-      price: product.price,
 
-      qty: 1
+    actualizarCarrito();
+
+    abrirCarrito();
+
+}
+
+
+/* =========================================================
+   ELIMINAR PRODUCTO
+========================================================= */
+
+function eliminarDelCarrito(id) {
+
+    carrito =
+        carrito.filter(
+            item => item.id !== id
+        );
+
+
+    actualizarCarrito();
+
+}
+
+
+/* =========================================================
+   CAMBIAR CANTIDAD
+========================================================= */
+
+function cambiarCantidad(id, cambio) {
+
+    const item =
+        carrito.find(
+            producto => producto.id === id
+        );
+
+
+    if (!item) return;
+
+
+    item.cantidad += cambio;
+
+
+    if (item.cantidad <= 0) {
+
+        eliminarDelCarrito(id);
+
+        return;
+
+    }
+
+
+    actualizarCarrito();
+
+}
+
+
+/* =========================================================
+   ACTUALIZAR CARRITO
+========================================================= */
+
+function actualizarCarrito() {
+
+    if (!cartItems) return;
+
+
+    cartItems.innerHTML = "";
+
+
+    if (carrito.length === 0) {
+
+        cartItems.innerHTML = `
+
+            <div class="empty-cart">
+
+                <div class="empty-cart-icon">
+                    +
+                </div>
+
+                <h3>
+                    Tu carrito está vacío
+                </h3>
+
+                <p>
+                    Agrega productos para comenzar tu pedido.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    carrito.forEach(item => {
+
+        const subtotal =
+            item.precio * item.cantidad;
+
+
+        const elemento =
+            document.createElement("div");
+
+
+        elemento.className =
+            "cart-item";
+
+
+        elemento.innerHTML = `
+
+            <div class="cart-item-info">
+
+                <strong>
+                    ${item.nombre}
+                </strong>
+
+                <small>
+                    $${item.precio.toFixed(2)} MXN
+                </small>
+
+            </div>
+
+
+            <div class="cart-item-controls">
+
+                <button
+                    onclick="cambiarCantidad(${item.id}, -1)"
+                >
+                    −
+                </button>
+
+                <span>
+                    ${item.cantidad}
+                </span>
+
+                <button
+                    onclick="cambiarCantidad(${item.id}, 1)"
+                >
+                    +
+                </button>
+
+            </div>
+
+
+            <strong class="cart-item-total">
+
+                $${subtotal.toFixed(2)}
+
+            </strong>
+
+
+            <button
+                class="cart-remove"
+                onclick="eliminarDelCarrito(${item.id})"
+                aria-label="Eliminar producto"
+            >
+                ×
+            </button>
+
+        `;
+
+
+        cartItems.appendChild(elemento);
 
     });
 
-  }
+
+    const total =
+        carrito.reduce(
+            (suma, item) =>
+                suma +
+                item.precio *
+                item.cantidad,
+            0
+        );
 
 
-  saveCart();
+    const cantidad =
+        carrito.reduce(
+            (suma, item) =>
+                suma +
+                item.cantidad,
+            0
+        );
 
-  openCart();
+
+    if (cartTotal) {
+
+        cartTotal.textContent =
+            `$${total.toFixed(2)} MXN`;
+
+    }
+
+
+    if (cartCount) {
+
+        cartCount.textContent =
+            cantidad;
+
+        cartCount.style.display =
+            cantidad > 0
+                ? "flex"
+                : "none";
+
+    }
 
 }
 
@@ -671,16 +527,20 @@ function addToCart(
    ABRIR CARRITO
 ========================================================= */
 
-function openCart() {
+function abrirCarrito() {
 
-  $("cartDrawer")
-    .classList
-    .add("open");
+    if (!cartDrawer) return;
 
+    cartDrawer.classList.add("open");
 
-  $("overlay")
-    .classList
-    .add("show");
+    if (overlay) {
+
+        overlay.classList.add("open");
+
+    }
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
@@ -689,746 +549,486 @@ function openCart() {
    CERRAR CARRITO
 ========================================================= */
 
-function closeCart() {
+function cerrarCarrito() {
 
-  $("cartDrawer")
-    .classList
-    .remove("open");
+    if (!cartDrawer) return;
 
+    cartDrawer.classList.remove("open");
 
-  $("overlay")
-    .classList
-    .remove("show");
+    if (overlay) {
+
+        overlay.classList.remove("open");
+
+    }
+
+    document.body.style.overflow =
+        "";
 
 }
 
 
 /* =========================================================
-   MODAL DE PRODUCTO
+   PEDIDO POR WHATSAPP
 ========================================================= */
 
-function openModal(id) {
+function pedirPorWhatsApp() {
 
-  selectedProduct =
-    products.find(
-      product =>
-        product.id === id
+    if (carrito.length === 0) {
+
+        alert(
+            "Agrega al menos un producto al carrito."
+        );
+
+        return;
+
+    }
+
+
+    let mensaje =
+        "Hola, Megaserigrafica. 👋\n\n";
+
+    mensaje +=
+        "Me gustaría realizar el siguiente pedido:\n\n";
+
+
+    carrito.forEach(item => {
+
+        const subtotal =
+            item.precio *
+            item.cantidad;
+
+
+        mensaje +=
+            `• ${item.nombre}\n`;
+
+        mensaje +=
+            `  Cantidad: ${item.cantidad}\n`;
+
+        mensaje +=
+            `  Precio: $${item.precio.toFixed(2)}\n`;
+
+        mensaje +=
+            `  Subtotal: $${subtotal.toFixed(2)}\n\n`;
+
+    });
+
+
+    const total =
+        carrito.reduce(
+            (suma, item) =>
+                suma +
+                item.precio *
+                item.cantidad,
+            0
+        );
+
+
+    mensaje +=
+        `TOTAL: $${total.toFixed(2)} MXN\n\n`;
+
+    mensaje +=
+        "¿Me pueden confirmar disponibilidad y forma de entrega?";
+
+
+    const url =
+        `https://wa.me/${WHATSAPP_PEDIDOS}?text=${encodeURIComponent(mensaje)}`;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+function configurarFiltros() {
+
+    const botones =
+        document.querySelectorAll(
+            ".category-button"
+        );
+
+
+    botones.forEach(boton => {
+
+        boton.addEventListener(
+            "click",
+            () => {
+
+                botones.forEach(
+                    item =>
+                        item.classList.remove(
+                            "active"
+                        )
+                );
+
+
+                boton.classList.add(
+                    "active"
+                );
+
+
+                const categoria =
+                    boton.dataset.category;
+
+
+                if (
+                    !categoria ||
+                    categoria === "todos"
+                ) {
+
+                    mostrarProductos();
+
+                    return;
+
+                }
+
+
+                const filtrados =
+                    productos.filter(
+                        producto =>
+                            producto.categoria ===
+                            categoria
+                    );
+
+
+                mostrarProductos(
+                    filtrados
+                );
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   MENÚ MÓVIL
+========================================================= */
+
+function configurarMenuMovil() {
+
+    const menuButton =
+        document.querySelector(
+            ".menu-button"
+        );
+
+
+    const mobileMenu =
+        document.querySelector(
+            ".mobile-menu"
+        );
+
+
+    const mobileClose =
+        document.querySelector(
+            ".mobile-close"
+        );
+
+
+    if (!menuButton || !mobileMenu)
+        return;
+
+
+    menuButton.addEventListener(
+        "click",
+        () => {
+
+            mobileMenu.classList.add(
+                "open"
+            );
+
+        }
     );
 
 
-  selectedVariants = {};
+    if (mobileClose) {
 
+        mobileClose.addEventListener(
+            "click",
+            () => {
 
-  const product =
-    selectedProduct;
+                mobileMenu.classList.remove(
+                    "open"
+                );
 
-
-  $("modalContent").innerHTML = `
-
-    <div class="modal-product">
-
-
-      <div
-        class="
-          product-visual
-          visual-${product.accent}
-        "
-      >
-
-        <div class="product-shape">
-
-          INK
-
-        </div>
-
-      </div>
-
-
-      <div>
-
-
-        <p class="eyebrow">
-
-          <span></span>
-
-          ${product.tag}
-
-        </p>
-
-
-        <h2>
-
-          ${product.name}
-
-        </h2>
-
-
-        <p>
-
-          ${product.desc}
-
-        </p>
-
-
-        ${
-          Object.entries(
-            product.variants || {}
-          )
-          .map(
-            ([key, values]) => `
-
-              <div class="variant-group">
-
-
-                <label>
-
-                  ${key}
-
-                </label>
-
-
-                <div
-                  class="variant-buttons"
-                >
-
-                  ${values.map(
-                    (value, index) => `
-
-                      <button
-                        class="
-                          ${index === 0
-                            ? "active"
-                            : ""
-                          }
-                        "
-                        data-variant="${key}"
-                        data-value="${value}"
-                      >
-
-                        ${value}
-
-                      </button>
-
-                  `).join("")}
-
-                </div>
-
-              </div>
-
-            `
-          ).join("")
-        }
-
-
-        <strong
-          class="price"
-          style="
-            display:block;
-            margin-top:20px;
-          "
-        >
-
-          ${money(product.price)}
-
-        </strong>
-
-
-        <button
-          class="
-            btn
-            btn-primary
-            modal-add
-          "
-          id="modalAdd"
-        >
-
-          Agregar al carrito
-
-          <span>
-            ＋
-          </span>
-
-        </button>
-
-
-      </div>
-
-
-    </div>
-
-  `;
-
-
-  Object.entries(
-    product.variants || {}
-  ).forEach(
-    ([key, values]) => {
-
-      selectedVariants[key] =
-        values[0];
+            }
+        );
 
     }
-  );
 
 
-  $("productModal")
-    .classList
-    .add("show");
+    mobileMenu
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    mobileMenu.classList.remove(
+                        "open"
+                    );
+
+                }
+            );
+
+        });
 
 }
-
-
-/* =========================================================
-   CERRAR MODAL
-========================================================= */
-
-function closeModal() {
-
-  $("productModal")
-    .classList
-    .remove("show");
-
-}
-
-
-/* =========================================================
-   EVENTOS GENERALES
-========================================================= */
-
-document.addEventListener(
-  "click",
-  (event) => {
-
-
-    /* -------------------------
-       AGREGAR PRODUCTO
-    ------------------------- */
-
-    const addButton =
-      event.target.closest(
-        "[data-add]"
-      );
-
-
-    if (addButton) {
-
-      const product =
-        products.find(
-          product =>
-            product.id ==
-            addButton.dataset.add
-        );
-
-
-      addToCart(product);
-
-      return;
-
-    }
-
-
-    /* -------------------------
-       ABRIR PRODUCTO
-    ------------------------- */
-
-    const productVisual =
-      event.target.closest(
-        "[data-open]"
-      );
-
-
-    if (productVisual) {
-
-      openModal(
-        Number(
-          productVisual.dataset.open
-        )
-      );
-
-      return;
-
-    }
-
-
-    /* -------------------------
-       CATEGORÍA
-    ------------------------- */
-
-    const categoryButton =
-      event.target.closest(
-        ".category"
-      );
-
-
-    if (categoryButton) {
-
-      document
-        .querySelectorAll(
-          ".category"
-        )
-        .forEach(
-          button =>
-            button.classList
-              .remove("active")
-        );
-
-
-      categoryButton
-        .classList
-        .add("active");
-
-
-      activeCategory =
-        categoryButton.dataset.category;
-
-
-      renderProducts();
-
-      return;
-
-    }
-
-
-    /* -------------------------
-       VARIANTES
-    ------------------------- */
-
-    const variantButton =
-      event.target.closest(
-        "[data-variant]"
-      );
-
-
-    if (variantButton) {
-
-      const variantName =
-        variantButton.dataset.variant;
-
-
-      document
-        .querySelectorAll(
-          `[data-variant="${variantName}"]`
-        )
-        .forEach(
-          button =>
-            button.classList
-              .remove("active")
-        );
-
-
-      variantButton
-        .classList
-        .add("active");
-
-
-      selectedVariants[
-        variantName
-      ] =
-        variantButton.dataset.value;
-
-
-      return;
-
-    }
-
-
-    /* -------------------------
-       AGREGAR DESDE MODAL
-    ------------------------- */
-
-    if (
-      event.target.id ===
-      "modalAdd"
-    ) {
-
-      addToCart(
-        selectedProduct,
-        selectedVariants
-      );
-
-      closeModal();
-
-      return;
-
-    }
-
-
-    /* -------------------------
-       AUMENTAR CANTIDAD
-    ------------------------- */
-
-    if (
-      event.target.matches(
-        "[data-inc]"
-      )
-    ) {
-
-      const index =
-        Number(
-          event.target.dataset.inc
-        );
-
-
-      cart[index].qty++;
-
-      saveCart();
-
-      return;
-
-    }
-
-
-    /* -------------------------
-       DISMINUIR CANTIDAD
-    ------------------------- */
-
-    if (
-      event.target.matches(
-        "[data-dec]"
-      )
-    ) {
-
-      const index =
-        Number(
-          event.target.dataset.dec
-        );
-
-
-      cart[index].qty--;
-
-
-      if (
-        cart[index].qty <= 0
-      ) {
-
-        cart.splice(
-          index,
-          1
-        );
-
-      }
-
-
-      saveCart();
-
-      return;
-
-    }
-
-
-    /* -------------------------
-       ELIMINAR
-    ------------------------- */
-
-    if (
-      event.target.matches(
-        "[data-remove]"
-      )
-    ) {
-
-      const index =
-        Number(
-          event.target.dataset.remove
-        );
-
-
-      cart.splice(
-        index,
-        1
-      );
-
-
-      saveCart();
-
-      return;
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   CARRITO
-========================================================= */
-
-$("cartBtn").onclick =
-  openCart;
-
-
-$("closeCart").onclick =
-  closeCart;
-
-
-$("overlay").onclick =
-  closeCart;
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-$("closeModal").onclick =
-  closeModal;
-
-
-$("productModal").addEventListener(
-  "click",
-  (event) => {
-
-    if (
-      event.target.id ===
-      "productModal"
-    ) {
-
-      closeModal();
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   VACIAR CARRITO
-========================================================= */
-
-$("clearCart").onclick =
-  () => {
-
-    cart = [];
-
-    saveCart();
-
-  };
-
-
-/* =========================================================
-   ORDENAR PRODUCTOS
-========================================================= */
-
-$("sortSelect").onchange =
-  renderProducts;
 
 
 /* =========================================================
    BUSCADOR
 ========================================================= */
 
-$("searchBtn").onclick =
-  () => {
+function configurarBuscador() {
 
-    $("searchBox")
-      .classList
-      .toggle("hidden");
-
-
-    $("searchInput").focus();
-
-  };
+    const searchButton =
+        document.querySelector(
+            "#searchButton"
+        );
 
 
-$("searchInput").oninput =
-  renderProducts;
+    const searchPanel =
+        document.querySelector(
+            "#searchPanel"
+        );
 
 
-/* =========================================================
-   FILTROS MOBILE
-========================================================= */
-
-$("mobileFilterBtn").onclick =
-  () => {
-
-    const filters =
-      document.querySelector(
-        ".filters-panel"
-      );
+    const searchInput =
+        document.querySelector(
+            "#searchInput"
+        );
 
 
-    filters.classList.toggle(
-      "mobile-open"
-    );
-
-  };
+    if (!searchButton || !searchPanel)
+        return;
 
 
-/* =========================================================
-   SERVICIOS DE DISEÑO
-========================================================= */
-
-document
-  .querySelectorAll(
-    ".service"
-  )
-  .forEach(
-    button => {
-
-      button.onclick =
+    searchButton.addEventListener(
+        "click",
         () => {
 
-          document
-            .querySelectorAll(
-              ".service"
-            )
-            .forEach(
-              item =>
-                item.classList
-                  .remove("active")
+            searchPanel.classList.toggle(
+                "open"
             );
 
 
-          button
-            .classList
-            .add("active");
+            if (
+                searchPanel.classList.contains(
+                    "open"
+                )
+            ) {
 
-        };
+                setTimeout(
+                    () => {
 
-    }
-  );
+                        searchInput?.focus();
 
+                    },
+                    100
+                );
 
-/* =========================================================
-   SUBIR ARCHIVO
-========================================================= */
+            }
 
-$("fileInput").onchange =
-  (event) => {
-
-    const file =
-      event.target.files[0];
-
-
-    if (!file) {
-
-      $("fileName")
-        .textContent =
-        "Ningún archivo seleccionado";
-
-      return;
-
-    }
-
-
-    $("fileName")
-      .textContent =
-      file.name;
-
-  };
-
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
-
-$("whatsappBtn").onclick =
-  () => {
-
-
-    if (!cart.length) {
-
-      alert(
-        "Agrega al menos un producto al carrito."
-      );
-
-      return;
-
-    }
-
-
-    const delivery =
-      document.querySelector(
-        'input[name="delivery"]:checked'
-      ).value;
-
-
-    const lines =
-      cart
-        .map(
-          item =>
-
-            `• ${item.qty} × ${item.name} — ${money(
-              item.price * item.qty
-            )}`
-
-        )
-        .join("\n");
-
-
-    const total =
-      cart.reduce(
-        (sum, item) =>
-          sum +
-          item.price *
-          item.qty,
-        0
-      );
-
-
-    const message =
-
-      `Hola Megaserigrafica, quiero realizar este pedido:
-
-${lines}
-
-Total: ${money(total)}
-
-Entrega: ${delivery}
-
-¿Me pueden confirmar disponibilidad y forma de pago?`;
-
-
-    /*
-      ==========================================
-      IMPORTANTE
-
-      CAMBIA ESTE NÚMERO POR EL WHATSAPP REAL
-      DE MEGASERIGRAFICA.
-
-      FORMATO:
-
-      52 + LADA + NÚMERO
-
-      SIN +, ESPACIOS NI GUIONES.
-
-      EJEMPLO:
-
-      525536557693
-      ==========================================
-    */
-
-
-    const phone =
-      "525500000000";
-
-
-    const whatsappURL =
-      `https://wa.me/${phone}?text=${encodeURIComponent(
-        message
-      )}`;
-
-
-    window.open(
-      whatsappURL,
-      "_blank"
+        }
     );
 
-  };
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            () => {
+
+                const texto =
+                    searchInput.value
+                        .toLowerCase()
+                        .trim();
+
+
+                if (!texto) {
+
+                    mostrarProductos();
+
+                    return;
+
+                }
+
+
+                const resultados =
+                    productos.filter(
+                        producto =>
+
+                            producto.nombre
+                                .toLowerCase()
+                                .includes(texto)
+
+                            ||
+
+                            producto.descripcion
+                                .toLowerCase()
+                                .includes(texto)
+
+                            ||
+
+                            producto.tipo
+                                .toLowerCase()
+                                .includes(texto)
+
+                    );
+
+
+                mostrarProductos(
+                    resultados
+                );
+
+            }
+        );
+
+    }
+
+}
 
 
 /* =========================================================
-   AÑO DEL FOOTER
+   SMOOTH SCROLL
 ========================================================= */
 
-$("year").textContent =
-  new Date().getFullYear();
+function configurarScroll() {
+
+    document
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    const id =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        !id ||
+                        id === "#"
+                    )
+                        return;
+
+
+                    const elemento =
+                        document.querySelector(
+                            id
+                        );
+
+
+                    if (!elemento)
+                        return;
+
+
+                    event.preventDefault();
+
+
+                    elemento.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
+        });
+
+}
 
 
 /* =========================================================
-   INICIALIZAR
+   EVENTOS DEL CARRITO
 ========================================================= */
 
-renderProducts();
+if (cartButton) {
 
-renderCart();
+    cartButton.addEventListener(
+        "click",
+        abrirCarrito
+    );
 
-updateCount();
+}
+
+
+if (cartClose) {
+
+    cartClose.addEventListener(
+        "click",
+        cerrarCarrito
+    );
+
+}
+
+
+if (overlay) {
+
+    overlay.addEventListener(
+        "click",
+        cerrarCarrito
+    );
+
+}
+
+
+/* =========================================================
+   BOTÓN WHATSAPP DEL CARRITO
+========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target.closest(
+                "#whatsappOrder"
+            )
+        ) {
+
+            pedirPorWhatsApp();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INICIALIZACIÓN
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        mostrarProductos();
+
+        configurarFiltros();
+
+        configurarMenuMovil();
+
+        configurarBuscador();
+
+        configurarScroll();
+
+        actualizarCarrito();
+
+    }
+);
