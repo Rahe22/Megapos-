@@ -8,231 +8,404 @@
    CONFIGURACIÓN
 ========================================================= */
 
-const WHATSAPP_PEDIDOS = "525568089314";
-
-const WHATSAPP_DISENO = "525574472298";
+const whatsappPedidos = "525568089314";
+const whatsappDiseno = "525574472298";
 
 
 /* =========================================================
-   PRODUCTOS DE EJEMPLO
-   Posteriormente sustituiremos estos por TODO tu catálogo
+   PRODUCTOS
+
+   AQUÍ PODREMOS AGREGAR TODOS TUS PRODUCTOS.
+
+   Cuando tengas las fotos simplemente cambia:
+
+   imagen: ""
+
+   por ejemplo:
+
+   imagen: "images/blanco-op.jpg"
+
 ========================================================= */
 
 const productos = [
 
+    /* =====================
+       TINTAS TEXTILES
+    ====================== */
+
     {
         id: 1,
-        nombre: "Tinta Ahulada Textil ECO",
         categoria: "textil",
+        nombre: "Tinta Ahulada Textil ECO - Blanco OP",
         precio: 97,
-        descripcion:
-            "Tinta plastisol de viscosidad media para estampados textiles de alto volumen.",
-        tipo: "Plastisol",
-        color: "Blanco",
-        unidad: "1 kg"
+        descripcion: "Plastisol base PVC, alto cubrimiento y excelente resistencia.",
+        imagen: ""
     },
 
     {
         id: 2,
-        nombre: "Tinta Vinílica Mate",
-        categoria: "vinil-mate",
-        precio: 160,
-        descripcion:
-            "Tinta vinílica de acabado mate para plásticos y materiales lisos.",
-        tipo: "Vinil Mate",
-        color: "Blanco",
-        unidad: "1 kg"
+        categoria: "textil",
+        nombre: "Tinta Ahulada Textil ECO - Negro",
+        precio: 86,
+        descripcion: "Acabado ahulado tradicional, flexible y resistente.",
+        imagen: ""
     },
 
     {
         id: 3,
-        nombre: "Tinta Vinílica Brillante",
-        categoria: "vinil-brillante",
-        precio: 215,
-        descripcion:
-            "Tinta vinílica de acabado brillante para aplicaciones publicitarias.",
-        tipo: "Vinil Brillante",
-        color: "Blanco",
-        unidad: "1 kg"
+        categoria: "textil",
+        nombre: "Tinta Ahulada Textil ECO - Rojo Laura",
+        precio: 92,
+        descripcion: "Color intenso para estampados textiles profesionales.",
+        imagen: ""
     },
 
     {
         id: 4,
-        nombre: "Solvente Xilol",
-        categoria: "solventes",
-        precio: 65,
-        descripcion:
-            "Solvente para diferentes procesos de limpieza y preparación.",
-        tipo: "Solvente",
-        color: "",
-        unidad: "1 litro"
+        categoria: "textil",
+        nombre: "Tinta Ahulada Textil ECO - Azul Marino",
+        precio: 92,
+        descripcion: "Tinta textil plastisol de viscosidad media.",
+        imagen: ""
     },
 
     {
         id: 5,
-        nombre: "Sericrom",
-        categoria: "emulsiones",
-        precio: 175,
-        descripcion:
-            "Emulsión para preparación de marcos de serigrafía.",
-        tipo: "Emulsión",
-        color: "",
-        unidad: "1 litro"
+        categoria: "textil",
+        nombre: "Base Opaca",
+        precio: 86,
+        descripcion: "Base para hacer rendir más la tinta con acabado opaco.",
+        imagen: ""
     },
 
     {
         id: 6,
-        nombre: "Racero 20 cm",
-        categoria: "raceros",
-        precio: 78,
-        descripcion:
-            "Racero para serigrafía de 20 cm.",
-        tipo: "Racero",
-        color: "",
-        unidad: "Pieza"
+        categoria: "textil",
+        nombre: "Base Nova",
+        precio: 130,
+        descripcion: "Base para modificar el tacto de la tinta.",
+        imagen: ""
     },
 
     {
         id: 7,
-        nombre: "Marco 40 × 50 — Malla T90",
-        categoria: "marcos",
-        precio: 95,
-        descripcion:
-            "Marco para serigrafía de 40 × 50 cm con malla T90.",
-        tipo: "Marco",
-        color: "",
-        unidad: "Pieza"
+        categoria: "textil",
+        nombre: "Base BTE",
+        precio: 130,
+        descripcion: "Base para aumentar el rendimiento y obtener acabado brillante.",
+        imagen: ""
     },
 
     {
         id: 8,
-        nombre: "Adhesivo Spray Excelink",
-        categoria: "otros",
-        precio: 115,
-        descripcion:
-            "Adhesivo en spray para aplicaciones de serigrafía.",
-        tipo: "Adhesivo",
-        color: "",
-        unidad: "270 g"
+        categoria: "textil",
+        nombre: "Base Cristal",
+        precio: 150,
+        descripcion: "Base transparente con acabado brillante y elasticidad.",
+        imagen: ""
+    },
+
+    {
+        id: 9,
+        categoria: "textil",
+        nombre: "Aditivo HD",
+        precio: 285,
+        descripcion: "Aditivo de alta densidad para crear relieve.",
+        imagen: ""
+    },
+
+    {
+        id: 10,
+        categoria: "textil",
+        nombre: "Tinta Ahulada Fluorescente",
+        precio: 130,
+        descripcion: "Tinta textil fluorescente para estampados de alto impacto.",
+        imagen: ""
+    },
+
+
+    /* =====================
+       TINTAS VINÍLICAS
+    ====================== */
+
+    {
+        id: 11,
+        categoria: "vinil",
+        nombre: "Tinta Vinílica Mate - Blanco",
+        precio: 160,
+        descripcion: "Tinta líquida base solvente para plásticos y superficies lisas.",
+        imagen: ""
+    },
+
+    {
+        id: 12,
+        categoria: "vinil",
+        nombre: "Tinta Vinílica Mate - Negro",
+        precio: 150,
+        descripcion: "Acabado mate y excelente adherencia.",
+        imagen: ""
+    },
+
+    {
+        id: 13,
+        categoria: "vinil",
+        nombre: "Tinta Vinílica Mate - Barniz",
+        precio: 170,
+        descripcion: "Barniz para acabados vinílicos.",
+        imagen: ""
+    },
+
+    {
+        id: 14,
+        categoria: "vinil",
+        nombre: "Tinta Vinílica Brillante - Blanco",
+        precio: 215,
+        descripcion: "Tinta vinílica con acabado brillante.",
+        imagen: ""
+    },
+
+    {
+        id: 15,
+        categoria: "vinil",
+        nombre: "Tinta Vinílica Brillante - Negro",
+        precio: 200,
+        descripcion: "Acabado brillante y alta adherencia.",
+        imagen: ""
+    },
+
+    {
+        id: 16,
+        categoria: "vinil",
+        nombre: "Tinta Vinílica Brillante - Magenta",
+        precio: 280,
+        descripcion: "Color intenso con acabado brillante.",
+        imagen: ""
+    },
+
+
+    /* =====================
+       QUÍMICOS
+    ====================== */
+
+    {
+        id: 17,
+        categoria: "quimicos",
+        nombre: "Solvente Xilol",
+        precio: 65,
+        descripcion: "Solvente para procesos de serigrafía.",
+        imagen: ""
+    },
+
+    {
+        id: 18,
+        categoria: "quimicos",
+        nombre: "Solvente Vinil",
+        precio: 88,
+        descripcion: "Solvente especializado para tinta vinílica.",
+        imagen: ""
+    },
+
+    {
+        id: 19,
+        categoria: "quimicos",
+        nombre: "Isoforona",
+        precio: 170,
+        descripcion: "Solvente especializado para aplicaciones técnicas.",
+        imagen: ""
+    },
+
+    {
+        id: 20,
+        categoria: "quimicos",
+        nombre: "Emulsión Sericrom",
+        precio: 175,
+        descripcion: "Emulsión para preparación de mallas.",
+        imagen: ""
+    },
+
+    {
+        id: 21,
+        categoria: "quimicos",
+        nombre: "Sericlin",
+        precio: 253,
+        descripcion: "Producto para recuperación y limpieza.",
+        imagen: ""
+    },
+
+    {
+        id: 22,
+        categoria: "quimicos",
+        nombre: "Seripasta",
+        precio: 159,
+        descripcion: "Producto para recuperación de marcos.",
+        imagen: ""
+    },
+
+
+    /* =====================
+       HERRAMIENTAS
+    ====================== */
+
+    {
+        id: 23,
+        categoria: "herramientas",
+        nombre: "Racero 20 cm",
+        precio: 78,
+        descripcion: "Racero profesional para serigrafía.",
+        imagen: ""
+    },
+
+    {
+        id: 24,
+        categoria: "herramientas",
+        nombre: "Racero 30 cm",
+        precio: 120,
+        descripcion: "Racero profesional para impresión.",
+        imagen: ""
+    },
+
+    {
+        id: 25,
+        categoria: "herramientas",
+        nombre: "Marco 20 x 30 cm",
+        precio: 53,
+        descripcion: "Marco para serigrafía. Precio según tipo de malla.",
+        imagen: ""
+    },
+
+    {
+        id: 26,
+        categoria: "herramientas",
+        nombre: "Marco 30 x 40 cm",
+        precio: 65,
+        descripcion: "Marco para serigrafía. Precio según tipo de malla.",
+        imagen: ""
+    },
+
+    {
+        id: 27,
+        categoria: "herramientas",
+        nombre: "Bisagras para Serigrafía",
+        precio: 205,
+        descripcion: "Par de bisagras para mesa de serigrafía.",
+        imagen: ""
     }
 
 ];
 
 
+
 /* =========================================================
-   CARRITO
+   ESTADO
 ========================================================= */
 
 let carrito = [];
 
 
+
 /* =========================================================
-   ELEMENTOS DEL DOM
+   INICIO
 ========================================================= */
 
-const productGrid =
-    document.querySelector("#productGrid");
+document.addEventListener("DOMContentLoaded", function () {
 
-const cartDrawer =
-    document.querySelector("#cartDrawer");
+    mostrarTodosProductos();
 
-const cartItems =
-    document.querySelector("#cartItems");
+});
 
-const cartTotal =
-    document.querySelector("#cartTotal");
-
-const cartCount =
-    document.querySelector("#cartCount");
-
-const cartButton =
-    document.querySelector("#cartButton");
-
-const cartClose =
-    document.querySelector("#cartClose");
-
-const overlay =
-    document.querySelector("#overlay");
 
 
 /* =========================================================
-   MOSTRAR PRODUCTOS
+   NAVEGACIÓN ENTRE SECCIONES
 ========================================================= */
 
-function mostrarProductos(lista = productos) {
+function mostrarSeccion(id) {
 
-    if (!productGrid) return;
+    const secciones =
+        document.querySelectorAll(".page-section");
 
-    productGrid.innerHTML = "";
 
-    if (lista.length === 0) {
+    secciones.forEach(function (seccion) {
 
-        productGrid.innerHTML = `
-            <div class="no-results show">
+        seccion.classList.remove("active");
 
-                <div class="no-results-icon">
-                    !
-                </div>
+    });
 
-                <h3>
-                    No encontramos productos
-                </h3>
 
-                <p>
-                    Prueba con otra categoría.
-                </p>
+    const seccionActiva =
+        document.getElementById(id);
 
-            </div>
-        `;
 
-        return;
+    if (seccionActiva) {
+
+        seccionActiva.classList.add("active");
+
     }
 
 
-    lista.forEach(producto => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-        const card =
+}
+
+
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+
+function mostrarProductos(listaProductos) {
+
+    const productGrid =
+        document.getElementById("productGrid");
+
+
+    productGrid.innerHTML = "";
+
+
+    listaProductos.forEach(function (producto) {
+
+        const tarjeta =
             document.createElement("article");
 
-        card.className = "product-card";
 
-        let visualClass = "visual-cyan";
+        tarjeta.className =
+            "product-card";
+
+
+        let imagenHTML = "";
+
 
         if (
-            producto.categoria === "vinil-mate" ||
-            producto.categoria === "vinil-brillante"
+            producto.imagen &&
+            producto.imagen.trim() !== ""
         ) {
 
-            visualClass = "visual-magenta";
+            imagenHTML = `
+                <img
+                    src="${producto.imagen}"
+                    alt="${producto.nombre}"
+                >
+            `;
 
-        }
+        } else {
 
-        if (
-            producto.categoria === "solventes" ||
-            producto.categoria === "emulsiones"
-        ) {
-
-            visualClass = "visual-yellow";
-
-        }
-
-
-        card.innerHTML = `
-
-            <div
-                class="product-visual ${visualClass}"
-                data-product-id="${producto.id}"
-            >
-
-                <span class="product-tag">
-                    ${producto.tipo}
-                </span>
-
-                <div class="product-shape">
-
-                    ${producto.color || producto.tipo}
-
+            imagenHTML = `
+                <div class="product-placeholder">
+                    FOTO
                 </div>
+            `;
+
+        }
+
+
+        tarjeta.innerHTML = `
+
+            <div class="product-image">
+
+                ${imagenHTML}
 
             </div>
 
@@ -243,6 +416,7 @@ function mostrarProductos(lista = productos) {
                     ${producto.nombre}
                 </h3>
 
+
                 <p>
                     ${producto.descripcion}
                 </p>
@@ -250,15 +424,15 @@ function mostrarProductos(lista = productos) {
 
                 <div class="product-bottom">
 
-                    <span class="price">
-                        $${producto.precio.toFixed(2)} MXN
+                    <span class="product-price">
+                        $${producto.precio.toFixed(2)}
                     </span>
 
 
                     <button
-                        class="add-btn"
+                        class="add-button"
                         onclick="agregarAlCarrito(${producto.id})"
-                        aria-label="Agregar al carrito"
+                        aria-label="Agregar ${producto.nombre}"
                     >
                         +
                     </button>
@@ -270,32 +444,114 @@ function mostrarProductos(lista = productos) {
         `;
 
 
-        productGrid.appendChild(card);
+        productGrid.appendChild(tarjeta);
 
     });
 
 }
 
 
+
 /* =========================================================
-   AGREGAR AL CARRITO
+   FILTROS
 ========================================================= */
 
-function agregarAlCarrito(id) {
+function filtrarCategoria(categoria) {
+
+    const filtrados =
+        productos.filter(function (producto) {
+
+            return producto.categoria === categoria;
+
+        });
+
+
+    const categoryTitle =
+        document.getElementById("categoryTitle");
+
+
+    const nombresCategorias = {
+
+        textil:
+            "Tintas Textiles",
+
+        vinil:
+            "Tintas Vinílicas",
+
+        quimicos:
+            "Químicos y Recuperación",
+
+        herramientas:
+            "Herramientas y Marcos"
+
+    };
+
+
+    categoryTitle.textContent =
+        nombresCategorias[categoria];
+
+
+    mostrarProductos(filtrados);
+
+
+    setTimeout(function () {
+
+        document
+            .getElementById("productGrid")
+            .scrollIntoView({
+
+                behavior: "smooth",
+                block: "start"
+
+            });
+
+    }, 100);
+
+}
+
+
+
+function mostrarTodosProductos() {
+
+    const categoryTitle =
+        document.getElementById("categoryTitle");
+
+
+    categoryTitle.textContent =
+        "Productos destacados";
+
+
+    mostrarProductos(productos);
+
+}
+
+
+
+/* =========================================================
+   CARRITO
+========================================================= */
+
+function agregarAlCarrito(idProducto) {
 
     const producto =
-        productos.find(
-            producto => producto.id === id
-        );
+        productos.find(function (item) {
+
+            return item.id === idProducto;
+
+        });
 
 
-    if (!producto) return;
+    if (!producto) {
+        return;
+    }
 
 
     const productoExistente =
-        carrito.find(
-            item => item.id === id
-        );
+        carrito.find(function (item) {
+
+            return item.id === idProducto;
+
+        });
 
 
     if (productoExistente) {
@@ -317,58 +573,11 @@ function agregarAlCarrito(id) {
 
     actualizarCarrito();
 
+
     abrirCarrito();
 
 }
 
-
-/* =========================================================
-   ELIMINAR PRODUCTO
-========================================================= */
-
-function eliminarDelCarrito(id) {
-
-    carrito =
-        carrito.filter(
-            item => item.id !== id
-        );
-
-
-    actualizarCarrito();
-
-}
-
-
-/* =========================================================
-   CAMBIAR CANTIDAD
-========================================================= */
-
-function cambiarCantidad(id, cambio) {
-
-    const item =
-        carrito.find(
-            producto => producto.id === id
-        );
-
-
-    if (!item) return;
-
-
-    item.cantidad += cambio;
-
-
-    if (item.cantidad <= 0) {
-
-        eliminarDelCarrito(id);
-
-        return;
-
-    }
-
-
-    actualizarCarrito();
-
-}
 
 
 /* =========================================================
@@ -377,7 +586,16 @@ function cambiarCantidad(id, cambio) {
 
 function actualizarCarrito() {
 
-    if (!cartItems) return;
+    const cartItems =
+        document.getElementById("cartItems");
+
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+
+    const cartTotal =
+        document.getElementById("cartTotal");
 
 
     cartItems.innerHTML = "";
@@ -388,10 +606,6 @@ function actualizarCarrito() {
         cartItems.innerHTML = `
 
             <div class="empty-cart">
-
-                <div class="empty-cart-icon">
-                    +
-                </div>
 
                 <h3>
                     Tu carrito está vacío
@@ -405,170 +619,227 @@ function actualizarCarrito() {
 
         `;
 
-    }
+    } else {
+
+        carrito.forEach(function (producto) {
+
+            const item =
+                document.createElement("div");
 
 
-    carrito.forEach(item => {
-
-        const subtotal =
-            item.precio * item.cantidad;
+            item.className =
+                "cart-item";
 
 
-        const elemento =
-            document.createElement("div");
+            item.innerHTML = `
+
+                <div class="cart-item-name">
+
+                    ${producto.nombre}
+
+                </div>
 
 
-        elemento.className =
-            "cart-item";
+                <div class="cart-item-price">
+
+                    $${producto.precio.toFixed(2)}
+
+                </div>
 
 
-        elemento.innerHTML = `
-
-            <div class="cart-item-info">
-
-                <strong>
-                    ${item.nombre}
-                </strong>
-
-                <small>
-                    $${item.precio.toFixed(2)} MXN
-                </small>
-
-            </div>
+                <div class="cart-item-actions">
 
 
-            <div class="cart-item-controls">
+                    <div class="quantity-control">
 
-                <button
-                    onclick="cambiarCantidad(${item.id}, -1)"
-                >
-                    −
-                </button>
-
-                <span>
-                    ${item.cantidad}
-                </span>
-
-                <button
-                    onclick="cambiarCantidad(${item.id}, 1)"
-                >
-                    +
-                </button>
-
-            </div>
+                        <button
+                            onclick="cambiarCantidad(${producto.id}, -1)"
+                        >
+                            −
+                        </button>
 
 
-            <strong class="cart-item-total">
+                        <span>
 
-                $${subtotal.toFixed(2)}
+                            ${producto.cantidad}
 
-            </strong>
-
-
-            <button
-                class="cart-remove"
-                onclick="eliminarDelCarrito(${item.id})"
-                aria-label="Eliminar producto"
-            >
-                ×
-            </button>
-
-        `;
+                        </span>
 
 
-        cartItems.appendChild(elemento);
+                        <button
+                            onclick="cambiarCantidad(${producto.id}, 1)"
+                        >
+                            +
 
-    });
+                        </button>
 
-
-    const total =
-        carrito.reduce(
-            (suma, item) =>
-                suma +
-                item.precio *
-                item.cantidad,
-            0
-        );
+                    </div>
 
 
-    const cantidad =
-        carrito.reduce(
-            (suma, item) =>
-                suma +
-                item.cantidad,
-            0
-        );
+                    <button
+                        class="remove-button"
+                        onclick="eliminarDelCarrito(${producto.id})"
+                    >
+                        ELIMINAR
+                    </button>
 
 
-    if (cartTotal) {
+                </div>
 
-        cartTotal.textContent =
-            `$${total.toFixed(2)} MXN`;
+            `;
+
+
+            cartItems.appendChild(item);
+
+        });
 
     }
 
 
-    if (cartCount) {
 
-        cartCount.textContent =
-            cantidad;
+    const cantidadTotal =
+        carrito.reduce(function (total, producto) {
+
+            return total + producto.cantidad;
+
+        }, 0);
+
+
+
+    const precioTotal =
+        carrito.reduce(function (total, producto) {
+
+            return total +
+                (
+                    producto.precio *
+                    producto.cantidad
+                );
+
+        }, 0);
+
+
+
+    cartCount.textContent =
+        cantidadTotal;
+
+
+    cartTotal.textContent =
+        `$${precioTotal.toFixed(2)} MXN`;
+
+
+    if (cantidadTotal > 0) {
 
         cartCount.style.display =
-            cantidad > 0
-                ? "flex"
-                : "none";
+            "flex";
+
+    } else {
+
+        cartCount.style.display =
+            "none";
 
     }
 
 }
 
 
+
 /* =========================================================
-   ABRIR CARRITO
+   CANTIDAD
+========================================================= */
+
+function cambiarCantidad(idProducto, cambio) {
+
+    const producto =
+        carrito.find(function (item) {
+
+            return item.id === idProducto;
+
+        });
+
+
+    if (!producto) {
+        return;
+    }
+
+
+    producto.cantidad += cambio;
+
+
+    if (producto.cantidad <= 0) {
+
+        eliminarDelCarrito(idProducto);
+
+        return;
+
+    }
+
+
+    actualizarCarrito();
+
+}
+
+
+
+/* =========================================================
+   ELIMINAR PRODUCTO
+========================================================= */
+
+function eliminarDelCarrito(idProducto) {
+
+    carrito =
+        carrito.filter(function (producto) {
+
+            return producto.id !== idProducto;
+
+        });
+
+
+    actualizarCarrito();
+
+}
+
+
+
+/* =========================================================
+   ABRIR / CERRAR CARRITO
 ========================================================= */
 
 function abrirCarrito() {
 
-    if (!cartDrawer) return;
+    document
+        .getElementById("cartDrawer")
+        .classList
+        .add("open");
 
-    cartDrawer.classList.add("open");
 
-    if (overlay) {
-
-        overlay.classList.add("open");
-
-    }
-
-    document.body.style.overflow =
-        "hidden";
+    document
+        .getElementById("overlay")
+        .classList
+        .add("open");
 
 }
 
 
-/* =========================================================
-   CERRAR CARRITO
-========================================================= */
 
 function cerrarCarrito() {
 
-    if (!cartDrawer) return;
+    document
+        .getElementById("cartDrawer")
+        .classList
+        .remove("open");
 
-    cartDrawer.classList.remove("open");
 
-    if (overlay) {
-
-        overlay.classList.remove("open");
-
-    }
-
-    document.body.style.overflow =
-        "";
+    document
+        .getElementById("overlay")
+        .classList
+        .remove("open");
 
 }
 
 
+
 /* =========================================================
-   PEDIDO POR WHATSAPP
+   WHATSAPP PEDIDOS
 ========================================================= */
 
 function pedirPorWhatsApp() {
@@ -576,7 +847,7 @@ function pedirPorWhatsApp() {
     if (carrito.length === 0) {
 
         alert(
-            "Agrega al menos un producto al carrito."
+            "Tu carrito está vacío. Agrega productos antes de hacer tu pedido."
         );
 
         return;
@@ -585,53 +856,43 @@ function pedirPorWhatsApp() {
 
 
     let mensaje =
-        "Hola, Megaserigrafica. 👋\n\n";
-
-    mensaje +=
-        "Me gustaría realizar el siguiente pedido:\n\n";
+        "Hola, quiero realizar el siguiente pedido en Megaserigrafica:%0A%0A";
 
 
-    carrito.forEach(item => {
+    carrito.forEach(function (producto) {
 
         const subtotal =
-            item.precio *
-            item.cantidad;
+            producto.precio *
+            producto.cantidad;
 
 
         mensaje +=
-            `• ${item.nombre}\n`;
-
-        mensaje +=
-            `  Cantidad: ${item.cantidad}\n`;
-
-        mensaje +=
-            `  Precio: $${item.precio.toFixed(2)}\n`;
-
-        mensaje +=
-            `  Subtotal: $${subtotal.toFixed(2)}\n\n`;
+            `• ${producto.nombre}%0A` +
+            `Cantidad: ${producto.cantidad}%0A` +
+            `Subtotal: $${subtotal.toFixed(2)}%0A%0A`;
 
     });
 
 
     const total =
-        carrito.reduce(
-            (suma, item) =>
-                suma +
-                item.precio *
-                item.cantidad,
-            0
-        );
+        carrito.reduce(function (suma, producto) {
+
+            return suma +
+                (
+                    producto.precio *
+                    producto.cantidad
+                );
+
+        }, 0);
 
 
     mensaje +=
-        `TOTAL: $${total.toFixed(2)} MXN\n\n`;
-
-    mensaje +=
-        "¿Me pueden confirmar disponibilidad y forma de entrega?";
+        `TOTAL: $${total.toFixed(2)} MXN%0A%0A` +
+        "Quedo atento a la confirmación de disponibilidad.";
 
 
     const url =
-        `https://wa.me/${WHATSAPP_PEDIDOS}?text=${encodeURIComponent(mensaje)}`;
+        `https://wa.me/${whatsappPedidos}?text=${mensaje}`;
 
 
     window.open(
@@ -642,393 +903,47 @@ function pedirPorWhatsApp() {
 }
 
 
-/* =========================================================
-   FILTROS
-========================================================= */
-
-function configurarFiltros() {
-
-    const botones =
-        document.querySelectorAll(
-            ".category-button"
-        );
-
-
-    botones.forEach(boton => {
-
-        boton.addEventListener(
-            "click",
-            () => {
-
-                botones.forEach(
-                    item =>
-                        item.classList.remove(
-                            "active"
-                        )
-                );
-
-
-                boton.classList.add(
-                    "active"
-                );
-
-
-                const categoria =
-                    boton.dataset.category;
-
-
-                if (
-                    !categoria ||
-                    categoria === "todos"
-                ) {
-
-                    mostrarProductos();
-
-                    return;
-
-                }
-
-
-                const filtrados =
-                    productos.filter(
-                        producto =>
-                            producto.categoria ===
-                            categoria
-                    );
-
-
-                mostrarProductos(
-                    filtrados
-                );
-
-            }
-        );
-
-    });
-
-}
-
 
 /* =========================================================
-   MENÚ MÓVIL
+   CONTACTO DISEÑO
 ========================================================= */
 
-function configurarMenuMovil() {
+function contactarDiseno() {
 
-    const menuButton =
-        document.querySelector(
-            ".menu-button"
-        );
+    const mensaje =
+        "Hola, me gustaría solicitar información sobre un diseño para serigrafía.";
 
 
-    const mobileMenu =
-        document.querySelector(
-            ".mobile-menu"
-        );
+    const url =
+        `https://wa.me/${whatsappDiseno}?text=${encodeURIComponent(mensaje)}`;
 
 
-    const mobileClose =
-        document.querySelector(
-            ".mobile-close"
-        );
-
-
-    if (!menuButton || !mobileMenu)
-        return;
-
-
-    menuButton.addEventListener(
-        "click",
-        () => {
-
-            mobileMenu.classList.add(
-                "open"
-            );
-
-        }
-    );
-
-
-    if (mobileClose) {
-
-        mobileClose.addEventListener(
-            "click",
-            () => {
-
-                mobileMenu.classList.remove(
-                    "open"
-                );
-
-            }
-        );
-
-    }
-
-
-    mobileMenu
-        .querySelectorAll("a")
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    mobileMenu.classList.remove(
-                        "open"
-                    );
-
-                }
-            );
-
-        });
-
-}
-
-
-/* =========================================================
-   BUSCADOR
-========================================================= */
-
-function configurarBuscador() {
-
-    const searchButton =
-        document.querySelector(
-            "#searchButton"
-        );
-
-
-    const searchPanel =
-        document.querySelector(
-            "#searchPanel"
-        );
-
-
-    const searchInput =
-        document.querySelector(
-            "#searchInput"
-        );
-
-
-    if (!searchButton || !searchPanel)
-        return;
-
-
-    searchButton.addEventListener(
-        "click",
-        () => {
-
-            searchPanel.classList.toggle(
-                "open"
-            );
-
-
-            if (
-                searchPanel.classList.contains(
-                    "open"
-                )
-            ) {
-
-                setTimeout(
-                    () => {
-
-                        searchInput?.focus();
-
-                    },
-                    100
-                );
-
-            }
-
-        }
-    );
-
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            () => {
-
-                const texto =
-                    searchInput.value
-                        .toLowerCase()
-                        .trim();
-
-
-                if (!texto) {
-
-                    mostrarProductos();
-
-                    return;
-
-                }
-
-
-                const resultados =
-                    productos.filter(
-                        producto =>
-
-                            producto.nombre
-                                .toLowerCase()
-                                .includes(texto)
-
-                            ||
-
-                            producto.descripcion
-                                .toLowerCase()
-                                .includes(texto)
-
-                            ||
-
-                            producto.tipo
-                                .toLowerCase()
-                                .includes(texto)
-
-                    );
-
-
-                mostrarProductos(
-                    resultados
-                );
-
-            }
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   SMOOTH SCROLL
-========================================================= */
-
-function configurarScroll() {
-
-    document
-        .querySelectorAll(
-            'a[href^="#"]'
-        )
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                event => {
-
-                    const id =
-                        link.getAttribute(
-                            "href"
-                        );
-
-
-                    if (
-                        !id ||
-                        id === "#"
-                    )
-                        return;
-
-
-                    const elemento =
-                        document.querySelector(
-                            id
-                        );
-
-
-                    if (!elemento)
-                        return;
-
-
-                    event.preventDefault();
-
-
-                    elemento.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                }
-            );
-
-        });
-
-}
-
-
-/* =========================================================
-   EVENTOS DEL CARRITO
-========================================================= */
-
-if (cartButton) {
-
-    cartButton.addEventListener(
-        "click",
-        abrirCarrito
+    window.open(
+        url,
+        "_blank"
     );
 
 }
 
 
-if (cartClose) {
 
-    cartClose.addEventListener(
-        "click",
-        cerrarCarrito
+/* =========================================================
+   CONTACTO PEDIDOS
+========================================================= */
+
+function contactarPedidos() {
+
+    const mensaje =
+        "Hola, me gustaría solicitar información sobre los servicios de Megaserigrafica.";
+
+
+    const url =
+        `https://wa.me/${whatsappPedidos}?text=${encodeURIComponent(mensaje)}`;
+
+
+    window.open(
+        url,
+        "_blank"
     );
 
 }
-
-
-if (overlay) {
-
-    overlay.addEventListener(
-        "click",
-        cerrarCarrito
-    );
-
-}
-
-
-/* =========================================================
-   BOTÓN WHATSAPP DEL CARRITO
-========================================================= */
-
-document.addEventListener(
-    "click",
-    event => {
-
-        if (
-            event.target.closest(
-                "#whatsappOrder"
-            )
-        ) {
-
-            pedirPorWhatsApp();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   INICIALIZACIÓN
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        mostrarProductos();
-
-        configurarFiltros();
-
-        configurarMenuMovil();
-
-        configurarBuscador();
-
-        configurarScroll();
-
-        actualizarCarrito();
-
-    }
-);
