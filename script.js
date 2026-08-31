@@ -1,8 +1,9 @@
 /* =========================================================
    MEGASERIGRAFICA
-   SCRIPT PRINCIPAL
+   SCRIPT PRINCIPAL — VERSIÓN ESTABLE
 ========================================================= */
 
+"use strict";
 
 /* =========================================================
    CONFIGURACIÓN
@@ -11,27 +12,11 @@
 const whatsappPedidos = "525568089314";
 const whatsappDiseno = "525574472298";
 
-
 /* =========================================================
    PRODUCTOS
-
-   AQUÍ PODREMOS AGREGAR TODOS TUS PRODUCTOS.
-
-   Cuando tengas las fotos simplemente cambia:
-
-   imagen: ""
-
-   por ejemplo:
-
-   imagen: "images/blanco-op.jpg"
-
 ========================================================= */
 
 const productos = [
-
-    /* =====================
-       TINTAS TEXTILES
-    ====================== */
 
     {
         id: 1,
@@ -123,11 +108,6 @@ const productos = [
         imagen: ""
     },
 
-
-    /* =====================
-       TINTAS VINÍLICAS
-    ====================== */
-
     {
         id: 11,
         categoria: "vinil",
@@ -181,11 +161,6 @@ const productos = [
         descripcion: "Color intenso con acabado brillante.",
         imagen: ""
     },
-
-
-    /* =====================
-       QUÍMICOS
-    ====================== */
 
     {
         id: 17,
@@ -241,11 +216,6 @@ const productos = [
         imagen: ""
     },
 
-
-    /* =====================
-       HERRAMIENTAS
-    ====================== */
-
     {
         id: 23,
         categoria: "herramientas",
@@ -293,15 +263,19 @@ const productos = [
 
 ];
 
-
-
 /* =========================================================
    ESTADO
 ========================================================= */
 
 let carrito = [];
 
+/* =========================================================
+   UTILIDADES
+========================================================= */
 
+function elemento(id) {
+    return document.getElementById(id);
+}
 
 /* =========================================================
    INICIO
@@ -311,37 +285,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mostrarTodosProductos();
 
+    actualizarCarrito();
+
 });
 
-
-
 /* =========================================================
-   NAVEGACIÓN ENTRE SECCIONES
+   NAVEGACIÓN
 ========================================================= */
 
 function mostrarSeccion(id) {
 
-    const secciones =
-        document.querySelectorAll(".page-section");
-
+    const secciones = document.querySelectorAll(".page-section");
 
     secciones.forEach(function (seccion) {
-
         seccion.classList.remove("active");
-
     });
 
-
-    const seccionActiva =
-        document.getElementById(id);
-
+    const seccionActiva = elemento(id);
 
     if (seccionActiva) {
-
         seccionActiva.classList.add("active");
-
     }
-
 
     window.scrollTo({
         top: 0,
@@ -350,33 +314,28 @@ function mostrarSeccion(id) {
 
 }
 
-
-
 /* =========================================================
-   PRODUCTOS
+   MOSTRAR PRODUCTOS
 ========================================================= */
 
 function mostrarProductos(listaProductos) {
 
-    const productGrid =
-        document.getElementById("productGrid");
+    const productGrid = elemento("productGrid");
 
+    if (!productGrid) {
+        console.warn("No existe #productGrid en el HTML.");
+        return;
+    }
 
     productGrid.innerHTML = "";
 
-
     listaProductos.forEach(function (producto) {
 
-        const tarjeta =
-            document.createElement("article");
+        const tarjeta = document.createElement("article");
 
-
-        tarjeta.className =
-            "product-card";
-
+        tarjeta.className = "product-card";
 
         let imagenHTML = "";
-
 
         if (
             producto.imagen &&
@@ -387,6 +346,7 @@ function mostrarProductos(listaProductos) {
                 <img
                     src="${producto.imagen}"
                     alt="${producto.nombre}"
+                    loading="lazy"
                 >
             `;
 
@@ -400,15 +360,11 @@ function mostrarProductos(listaProductos) {
 
         }
 
-
         tarjeta.innerHTML = `
 
             <div class="product-image">
-
                 ${imagenHTML}
-
             </div>
-
 
             <div class="product-info">
 
@@ -416,21 +372,19 @@ function mostrarProductos(listaProductos) {
                     ${producto.nombre}
                 </h3>
 
-
                 <p>
                     ${producto.descripcion}
                 </p>
 
-
                 <div class="product-bottom">
 
                     <span class="product-price">
-                        $${producto.precio.toFixed(2)}
+                        $${Number(producto.precio).toFixed(2)}
                     </span>
-
 
                     <button
                         class="add-button"
+                        type="button"
                         onclick="agregarAlCarrito(${producto.id})"
                         aria-label="Agregar ${producto.nombre}"
                     >
@@ -443,14 +397,11 @@ function mostrarProductos(listaProductos) {
 
         `;
 
-
         productGrid.appendChild(tarjeta);
 
     });
 
 }
-
-
 
 /* =========================================================
    FILTROS
@@ -458,74 +409,67 @@ function mostrarProductos(listaProductos) {
 
 function filtrarCategoria(categoria) {
 
-    const filtrados =
-        productos.filter(function (producto) {
+    const filtrados = productos.filter(function (producto) {
 
-            return producto.categoria === categoria;
+        return producto.categoria === categoria;
 
-        });
-
-
-    const categoryTitle =
-        document.getElementById("categoryTitle");
-
+    });
 
     const nombresCategorias = {
 
-        textil:
-            "Tintas Textiles",
+        textil: "Tintas Textiles",
 
-        vinil:
-            "Tintas Vinílicas",
+        vinil: "Tintas Vinílicas",
 
-        quimicos:
-            "Químicos y Recuperación",
+        quimicos: "Químicos y Recuperación",
 
-        herramientas:
-            "Herramientas y Marcos"
+        herramientas: "Herramientas y Marcos"
 
     };
 
+    const categoryTitle = elemento("categoryTitle");
 
-    categoryTitle.textContent =
-        nombresCategorias[categoria];
+    if (categoryTitle) {
 
+        categoryTitle.textContent =
+            nombresCategorias[categoria] ||
+            "Productos";
+
+    }
 
     mostrarProductos(filtrados);
 
+    const productGrid = elemento("productGrid");
 
-    setTimeout(function () {
+    if (productGrid) {
 
-        document
-            .getElementById("productGrid")
-            .scrollIntoView({
+        setTimeout(function () {
 
+            productGrid.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
-
             });
 
-    }, 100);
+        }, 100);
+
+    }
 
 }
 
-
-
 function mostrarTodosProductos() {
 
-    const categoryTitle =
-        document.getElementById("categoryTitle");
+    const categoryTitle = elemento("categoryTitle");
 
+    if (categoryTitle) {
 
-    categoryTitle.textContent =
-        "Productos destacados";
+        categoryTitle.textContent =
+            "Productos destacados";
 
+    }
 
     mostrarProductos(productos);
 
 }
-
-
 
 /* =========================================================
    CARRITO
@@ -533,36 +477,41 @@ function mostrarTodosProductos() {
 
 function agregarAlCarrito(idProducto) {
 
-    const producto =
-        productos.find(function (item) {
+    const producto = productos.find(function (item) {
 
-            return item.id === idProducto;
+        return item.id === idProducto;
 
-        });
-
+    });
 
     if (!producto) {
         return;
     }
 
+    const productoExistente = carrito.find(function (item) {
 
-    const productoExistente =
-        carrito.find(function (item) {
+        return item.id === idProducto;
 
-            return item.id === idProducto;
-
-        });
-
+    });
 
     if (productoExistente) {
 
-        productoExistente.cantidad++;
+        productoExistente.cantidad += 1;
 
     } else {
 
         carrito.push({
 
-            ...producto,
+            id: producto.id,
+
+            categoria: producto.categoria,
+
+            nombre: producto.nombre,
+
+            precio: producto.precio,
+
+            descripcion: producto.descripcion,
+
+            imagen: producto.imagen,
 
             cantidad: 1
 
@@ -570,15 +519,11 @@ function agregarAlCarrito(idProducto) {
 
     }
 
-
     actualizarCarrito();
-
 
     abrirCarrito();
 
 }
-
-
 
 /* =========================================================
    ACTUALIZAR CARRITO
@@ -586,20 +531,16 @@ function agregarAlCarrito(idProducto) {
 
 function actualizarCarrito() {
 
-    const cartItems =
-        document.getElementById("cartItems");
+    const cartItems = elemento("cartItems");
+    const cartCount = elemento("cartCount");
+    const cartTotal = elemento("cartTotal");
 
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-
-    const cartTotal =
-        document.getElementById("cartTotal");
-
+    if (!cartItems) {
+        console.warn("No existe #cartItems.");
+        return;
+    }
 
     cartItems.innerHTML = "";
-
 
     if (carrito.length === 0) {
 
@@ -623,71 +564,55 @@ function actualizarCarrito() {
 
         carrito.forEach(function (producto) {
 
-            const item =
-                document.createElement("div");
+            const item = document.createElement("div");
 
-
-            item.className =
-                "cart-item";
-
+            item.className = "cart-item";
 
             item.innerHTML = `
 
                 <div class="cart-item-name">
-
                     ${producto.nombre}
-
                 </div>
-
 
                 <div class="cart-item-price">
-
-                    $${producto.precio.toFixed(2)}
-
+                    $${Number(producto.precio).toFixed(2)}
                 </div>
 
-
                 <div class="cart-item-actions">
-
 
                     <div class="quantity-control">
 
                         <button
+                            type="button"
                             onclick="cambiarCantidad(${producto.id}, -1)"
                         >
                             −
                         </button>
 
-
                         <span>
-
                             ${producto.cantidad}
-
                         </span>
 
-
                         <button
+                            type="button"
                             onclick="cambiarCantidad(${producto.id}, 1)"
                         >
                             +
-
                         </button>
 
                     </div>
 
-
                     <button
+                        type="button"
                         class="remove-button"
                         onclick="eliminarDelCarrito(${producto.id})"
                     >
                         ELIMINAR
                     </button>
 
-
                 </div>
 
             `;
-
 
             cartItems.appendChild(item);
 
@@ -695,75 +620,63 @@ function actualizarCarrito() {
 
     }
 
-
-
-    const cantidadTotal =
-        carrito.reduce(function (total, producto) {
+    const cantidadTotal = carrito.reduce(
+        function (total, producto) {
 
             return total + producto.cantidad;
 
-        }, 0);
+        },
+        0
+    );
 
-
-
-    const precioTotal =
-        carrito.reduce(function (total, producto) {
+    const precioTotal = carrito.reduce(
+        function (total, producto) {
 
             return total +
-                (
-                    producto.precio *
-                    producto.cantidad
-                );
+                producto.precio *
+                producto.cantidad;
 
-        }, 0);
+        },
+        0
+    );
 
+    if (cartCount) {
 
-
-    cartCount.textContent =
-        cantidadTotal;
-
-
-    cartTotal.textContent =
-        `$${precioTotal.toFixed(2)} MXN`;
-
-
-    if (cantidadTotal > 0) {
+        cartCount.textContent = cantidadTotal;
 
         cartCount.style.display =
-            "flex";
+            cantidadTotal > 0
+                ? "flex"
+                : "none";
 
-    } else {
+    }
 
-        cartCount.style.display =
-            "none";
+    if (cartTotal) {
+
+        cartTotal.textContent =
+            `$${precioTotal.toFixed(2)} MXN`;
 
     }
 
 }
 
-
-
 /* =========================================================
-   CANTIDAD
+   CAMBIAR CANTIDAD
 ========================================================= */
 
 function cambiarCantidad(idProducto, cambio) {
 
-    const producto =
-        carrito.find(function (item) {
+    const producto = carrito.find(function (item) {
 
-            return item.id === idProducto;
+        return item.id === idProducto;
 
-        });
-
+    });
 
     if (!producto) {
         return;
     }
 
-
     producto.cantidad += cambio;
-
 
     if (producto.cantidad <= 0) {
 
@@ -773,70 +686,71 @@ function cambiarCantidad(idProducto, cambio) {
 
     }
 
-
     actualizarCarrito();
 
 }
 
-
-
 /* =========================================================
-   ELIMINAR PRODUCTO
+   ELIMINAR
 ========================================================= */
 
 function eliminarDelCarrito(idProducto) {
 
-    carrito =
-        carrito.filter(function (producto) {
+    carrito = carrito.filter(function (producto) {
 
-            return producto.id !== idProducto;
+        return producto.id !== idProducto;
 
-        });
-
+    });
 
     actualizarCarrito();
 
 }
 
-
-
 /* =========================================================
-   ABRIR / CERRAR CARRITO
+   ABRIR CARRITO
 ========================================================= */
 
 function abrirCarrito() {
 
-    document
-        .getElementById("cartDrawer")
-        .classList
-        .add("open");
+    const cartDrawer = elemento("cartDrawer");
+    const overlay = elemento("overlay");
 
+    if (cartDrawer) {
 
-    document
-        .getElementById("overlay")
-        .classList
-        .add("open");
+        cartDrawer.classList.add("open");
+
+    }
+
+    if (overlay) {
+
+        overlay.classList.add("open");
+
+    }
 
 }
 
-
+/* =========================================================
+   CERRAR CARRITO
+========================================================= */
 
 function cerrarCarrito() {
 
-    document
-        .getElementById("cartDrawer")
-        .classList
-        .remove("open");
+    const cartDrawer = elemento("cartDrawer");
+    const overlay = elemento("overlay");
 
+    if (cartDrawer) {
 
-    document
-        .getElementById("overlay")
-        .classList
-        .remove("open");
+        cartDrawer.classList.remove("open");
+
+    }
+
+    if (overlay) {
+
+        overlay.classList.remove("open");
+
+    }
 
 }
-
-
 
 /* =========================================================
    WHATSAPP PEDIDOS
@@ -854,10 +768,8 @@ function pedirPorWhatsApp() {
 
     }
 
-
     let mensaje =
-        "Hola, quiero realizar el siguiente pedido en Megaserigrafica:%0A%0A";
-
+        "Hola, quiero realizar el siguiente pedido en Megaserigrafica:\n\n";
 
     carrito.forEach(function (producto) {
 
@@ -865,44 +777,34 @@ function pedirPorWhatsApp() {
             producto.precio *
             producto.cantidad;
 
-
         mensaje +=
-            `• ${producto.nombre}%0A` +
-            `Cantidad: ${producto.cantidad}%0A` +
-            `Subtotal: $${subtotal.toFixed(2)}%0A%0A`;
+            `• ${producto.nombre}\n` +
+            `Cantidad: ${producto.cantidad}\n` +
+            `Subtotal: $${subtotal.toFixed(2)}\n\n`;
 
     });
 
-
-    const total =
-        carrito.reduce(function (suma, producto) {
+    const total = carrito.reduce(
+        function (suma, producto) {
 
             return suma +
-                (
-                    producto.precio *
-                    producto.cantidad
-                );
+                producto.precio *
+                producto.cantidad;
 
-        }, 0);
-
-
-    mensaje +=
-        `TOTAL: $${total.toFixed(2)} MXN%0A%0A` +
-        "Quedo atento a la confirmación de disponibilidad.";
-
-
-    const url =
-        `https://wa.me/${whatsappPedidos}?text=${mensaje}`;
-
-
-    window.open(
-        url,
-        "_blank"
+        },
+        0
     );
 
+    mensaje +=
+        `TOTAL: $${total.toFixed(2)} MXN\n\n` +
+        "Quedo atento a la confirmación de disponibilidad.";
+
+    const url =
+        `https://wa.me/${whatsappPedidos}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+
 }
-
-
 
 /* =========================================================
    CONTACTO DISEÑO
@@ -913,19 +815,12 @@ function contactarDiseno() {
     const mensaje =
         "Hola, me gustaría solicitar información sobre un diseño para serigrafía.";
 
-
     const url =
         `https://wa.me/${whatsappDiseno}?text=${encodeURIComponent(mensaje)}`;
 
-
-    window.open(
-        url,
-        "_blank"
-    );
+    window.open(url, "_blank");
 
 }
-
-
 
 /* =========================================================
    CONTACTO PEDIDOS
@@ -936,14 +831,17 @@ function contactarPedidos() {
     const mensaje =
         "Hola, me gustaría solicitar información sobre los servicios de Megaserigrafica.";
 
-
     const url =
         `https://wa.me/${whatsappPedidos}?text=${encodeURIComponent(mensaje)}`;
 
-
-    window.open(
-        url,
-        "_blank"
-    );
+    window.open(url, "_blank");
 
 }
+
+/* =========================================================
+   DIAGNÓSTICO
+========================================================= */
+
+console.log(
+    "MEGASERIGRAFICA: JavaScript cargado correctamente."
+);
