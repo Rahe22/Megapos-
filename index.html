@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -35,26 +37,17 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     FONDO
-========================= -->
-
 <div class="background-glow glow-cyan"></div>
-
 <div class="background-glow glow-magenta"></div>
-
 <div class="background-grid"></div>
 
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header class="header">
 
@@ -66,13 +59,14 @@
         M
     </button>
 
-
     <div class="header-actions">
 
         <button
             class="cart-button"
             onclick="abrirCarrito()"
+            aria-label="Abrir carrito"
         >
+
             🛒
 
             <span
@@ -81,6 +75,7 @@
             >
                 0
             </span>
+
         </button>
 
     </div>
@@ -88,633 +83,545 @@
 </header>
 
 
-
-<!-- =========================
-     APP
-========================= -->
-
 <main class="app-container">
 
 
-    <!-- =====================
-         INICIO
-    ====================== -->
+<!-- =====================================================
+     INICIO
+===================================================== -->
 
-    <section
-        id="inicio"
-        class="page-section active"
-    >
+<section
+    id="inicio"
+    class="page-section active"
+>
 
-        <div class="home-content">
+    <div class="home-content">
 
+        <div class="brand-container">
 
-            <!-- LOGO / IDENTIDAD -->
+            <div class="brand-mark">
 
-            <div class="brand-container">
+                <div class="brand-line line-cyan"></div>
+                <div class="brand-line line-magenta"></div>
+                <div class="brand-line line-yellow"></div>
 
-                <!--
-                CUANDO SUBAMOS TU LOGO
-                CAMBIAREMOS ESTE BLOQUE
-                POR UNA IMAGEN
-                -->
-
-                <div class="brand-mark">
-
-                    <div class="brand-line line-cyan"></div>
-
-                    <div class="brand-line line-magenta"></div>
-
-                    <div class="brand-line line-yellow"></div>
-
-                    <span>M</span>
-
-                </div>
-
-
-                <h1>
-                    MEGA<span>SERIGRAFICA</span>
-                </h1>
-
-
-                <p class="brand-subtitle">
-                    INSUMOS · DISEÑO · SERVICIOS
-                </p>
+                <span>M</span>
 
             </div>
 
 
-
-            <!-- MENÚ PRINCIPAL -->
-
-            <div class="main-menu">
-
-
-                <button
-                    class="main-option option-cyan"
-                    onclick="mostrarSeccion('insumos')"
-                >
-
-                    <span class="option-number">
-                        01
-                    </span>
-
-                    <div class="option-content">
-
-                        <span class="option-icon">
-                            ◉
-                        </span>
-
-                        <div>
-
-                            <h2>
-                                INSUMOS
-                            </h2>
-
-                            <p>
-                                Tintas, químicos y herramientas
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <span class="option-arrow">
-                        →
-                    </span>
-
-                </button>
+            <h1>
+                MEGA<span>SERIGRAFICA</span>
+            </h1>
 
 
-
-                <button
-                    class="main-option option-magenta"
-                    onclick="mostrarSeccion('diseno')"
-                >
-
-                    <span class="option-number">
-                        02
-                    </span>
-
-                    <div class="option-content">
-
-                        <span class="option-icon">
-                            ✦
-                        </span>
-
-                        <div>
-
-                            <h2>
-                                DISEÑO
-                            </h2>
-
-                            <p>
-                                Artes gráficas para serigrafía
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <span class="option-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-
-                <button
-                    class="main-option option-yellow"
-                    onclick="mostrarSeccion('servicios')"
-                >
-
-                    <span class="option-number">
-                        03
-                    </span>
-
-                    <div class="option-content">
-
-                        <span class="option-icon">
-                            ◈
-                        </span>
-
-                        <div>
-
-                            <h2>
-                                SERVICIOS
-                            </h2>
-
-                            <p>
-                                Marcos y recuperación
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <span class="option-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-            </div>
-
-
-
-            <div class="home-info">
-
-                <span>📍 Nezahualcóyotl, Estado de México</span>
-
-                <span>•</span>
-
-                <span>💬 Pedidos por WhatsApp</span>
-
-            </div>
-
+            <p class="brand-subtitle">
+                INSUMOS · DISEÑO · SERVICIOS
+            </p>
 
         </div>
 
-    </section>
 
+        <div class="main-menu">
 
-
-    <!-- =====================
-         INSUMOS
-    ====================== -->
-
-    <section
-        id="insumos"
-        class="page-section"
-    >
-
-        <div class="section-header">
 
             <button
-                class="back-button"
-                onclick="mostrarSeccion('inicio')"
+                class="main-option option-cyan"
+                onclick="mostrarSeccion('insumos')"
             >
-                ← VOLVER
-            </button>
 
-
-            <div>
-
-                <span class="section-number">
+                <span class="option-number">
                     01
                 </span>
 
-                <h2>
-                    INSUMOS
-                </h2>
+                <div class="option-content">
 
-                <p>
-                    Material profesional para serigrafía
-                </p>
+                    <span class="option-icon">
+                        ◉
+                    </span>
 
-            </div>
+                    <div>
 
-        </div>
+                        <h2>
+                            INSUMOS
+                        </h2>
 
+                        <p>
+                            Tintas, químicos y herramientas
+                        </p>
 
+                    </div>
 
-        <!-- CATEGORÍAS -->
+                </div>
 
-        <div class="categories-grid">
-
-
-            <button
-                class="category-card"
-                onclick="filtrarCategoria('textil')"
-            >
-                <span>🎨</span>
-
-                <h3>
-                    Tintas Textiles
-                </h3>
-
-                <p>
-                    Plastisol y ahulada
-                </p>
-            </button>
-
-
-
-            <button
-                class="category-card"
-                onclick="filtrarCategoria('vinil')"
-            >
-                <span>◉</span>
-
-                <h3>
-                    Tintas Vinílicas
-                </h3>
-
-                <p>
-                    Mate y brillante
-                </p>
-            </button>
-
-
-
-            <button
-                class="category-card"
-                onclick="filtrarCategoria('quimicos')"
-            >
-                <span>⚗</span>
-
-                <h3>
-                    Químicos
-                </h3>
-
-                <p>
-                    Solventes y recuperación
-                </p>
-            </button>
-
-
-
-            <button
-                class="category-card"
-                onclick="filtrarCategoria('herramientas')"
-            >
-                <span>▣</span>
-
-                <h3>
-                    Herramientas
-                </h3>
-
-                <p>
-                    Marcos y raceros
-                </p>
-            </button>
-
-
-        </div>
-
-
-
-        <!-- PRODUCTOS -->
-
-        <div class="products-header">
-
-            <div>
-
-                <span class="section-number">
-                    CATÁLOGO
+                <span class="option-arrow">
+                    →
                 </span>
 
-                <h2 id="categoryTitle">
-                    Productos destacados
-                </h2>
-
-            </div>
-
-
-            <button
-                class="show-all"
-                onclick="mostrarTodosProductos()"
-            >
-                VER TODOS
-            </button>
-
-        </div>
-
-
-        <div
-            id="productGrid"
-            class="products-grid"
-        ></div>
-
-
-    </section>
-
-
-
-    <!-- =====================
-         DISEÑO
-    ====================== -->
-
-    <section
-        id="diseno"
-        class="page-section"
-    >
-
-        <div class="section-header">
-
-            <button
-                class="back-button"
-                onclick="mostrarSeccion('inicio')"
-            >
-                ← VOLVER
             </button>
 
 
-            <div>
+            <button
+                class="main-option option-magenta"
+                onclick="mostrarSeccion('diseno')"
+            >
 
-                <span class="section-number">
+                <span class="option-number">
                     02
                 </span>
 
-                <h2>
-                    ESTUDIO DE DISEÑO
-                </h2>
+                <div class="option-content">
 
-                <p>
-                    Artes gráficas preparadas para producción
-                </p>
+                    <span class="option-icon">
+                        ✦
+                    </span>
 
-            </div>
+                    <div>
 
-        </div>
+                        <h2>
+                            DISEÑO
+                        </h2>
 
+                        <p>
+                            Artes gráficas para serigrafía
+                        </p>
 
+                    </div>
 
-        <div class="services-grid">
+                </div>
 
-
-            <article class="service-card">
-
-                <span class="service-number">
-                    01
+                <span class="option-arrow">
+                    →
                 </span>
 
-                <h3>
-                    Diseño sencillo
-                </h3>
-
-                <p>
-                    Diseños a un color.
-                </p>
-
-                <strong>
-                    $45 - $60
-                </strong>
-
-            </article>
-
-
-
-            <article class="service-card">
-
-                <span class="service-number">
-                    02
-                </span>
-
-                <h3>
-                    Diseño multicolor
-                </h3>
-
-                <p>
-                    Diseños de dos o más colores.
-                </p>
-
-                <strong>
-                    $80 - $200
-                </strong>
-
-            </article>
-
-
-
-            <article class="service-card">
-
-                <span class="service-number">
-                    03
-                </span>
-
-                <h3>
-                    Selección de color
-                </h3>
-
-                <p>
-                    Cyan, magenta y amarillo con base blanca.
-                </p>
-
-                <strong>
-                    $200
-                </strong>
-
-            </article>
-
-
-        </div>
-
-
-        <div class="design-cta">
-
-            <div>
-
-                <span>
-                    ¿TIENES UNA IDEA?
-                </span>
-
-                <h2>
-                    Hablemos de tu diseño
-                </h2>
-
-                <p>
-                    Te ayudamos a preparar tu proyecto.
-                </p>
-
-            </div>
-
-
-            <button
-                class="whatsapp-design"
-                onclick="contactarDiseno()"
-            >
-                PEDIR DISEÑO →
-            </button>
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================
-         SERVICIOS
-    ====================== -->
-
-    <section
-        id="servicios"
-        class="page-section"
-    >
-
-        <div class="section-header">
-
-            <button
-                class="back-button"
-                onclick="mostrarSeccion('inicio')"
-            >
-                ← VOLVER
             </button>
 
 
-            <div>
+            <button
+                class="main-option option-yellow"
+                onclick="mostrarSeccion('servicios')"
+            >
 
-                <span class="section-number">
+                <span class="option-number">
                     03
                 </span>
 
-                <h2>
-                    SERVICIOS
-                </h2>
+                <div class="option-content">
 
-                <p>
-                    Soluciones para tu proceso de serigrafía
-                </p>
+                    <span class="option-icon">
+                        ◈
+                    </span>
 
-            </div>
+                    <div>
+
+                        <h2>
+                            SERVICIOS
+                        </h2>
+
+                        <p>
+                            Marcos, recuperación y equipo
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <span class="option-arrow">
+                    →
+                </span>
+
+            </button>
+
 
         </div>
 
 
+        <div class="home-info">
 
-        <div class="service-list">
+            <span>
+                📍 Nezahualcóyotl, Estado de México
+            </span>
 
+            <span>
+                •
+            </span>
 
-            <article class="service-row">
+            <span>
+                💬 Pedidos por WhatsApp
+            </span>
 
-                <div class="service-icon">
-                    ▣
-                </div>
+        </div>
 
-                <div>
+    </div>
 
-                    <h3>
-                        Elaboración de Marcos
-                    </h3>
-
-                    <p>
-                        Fabricación según medida y diseño físico.
-                    </p>
-
-                </div>
-
-                <span>
-                    DESDE $13
-                </span>
-
-            </article>
+</section>
 
 
 
-            <article class="service-row">
+<!-- =====================================================
+     INSUMOS
+===================================================== -->
 
-                <div class="service-icon">
-                    ◫
-                </div>
+<section
+    id="insumos"
+    class="page-section"
+>
 
-                <div>
+    <div class="section-header">
 
-                    <h3>
-                        Recuperación de Marcos
-                    </h3>
-
-                    <p>
-                        Recuperación de marcos para reutilización.
-                    </p>
-
-                </div>
-
-                <span>
-                    DESDE $13
-                </span>
-
-            </article>
+        <button
+            class="back-button"
+            onclick="mostrarSeccion('inicio')"
+        >
+            ← VOLVER
+        </button>
 
 
+        <div>
 
-            <article class="service-row">
+            <span class="section-number">
+                01
+            </span>
 
-                <div class="service-icon">
-                    ✦
-                </div>
+            <h2>
+                INSUMOS
+            </h2>
 
-                <div>
+            <p>
+                Material profesional para serigrafía
+            </p>
 
-                    <h3>
-                        Asesoría
-                    </h3>
+        </div>
 
-                    <p>
-                        Atención para elegir materiales y procesos.
-                    </p>
+    </div>
 
-                </div>
 
-                <span>
-                    CONSULTAR
-                </span>
+    <!-- LAS CATEGORÍAS SE GENERAN DESDE JAVASCRIPT -->
 
-            </article>
+    <div
+        id="categoriesGrid"
+        class="categories-grid"
+    ></div>
 
+
+    <div class="products-header">
+
+        <div>
+
+            <span class="section-number">
+                CATÁLOGO
+            </span>
+
+            <h2 id="categoryTitle">
+                Todos los productos
+            </h2>
 
         </div>
 
 
         <button
-            class="contact-service"
-            onclick="contactarPedidos()"
+            class="show-all"
+            onclick="mostrarTodosProductos()"
         >
-            CONTACTAR POR WHATSAPP →
+            VER TODOS
+        </button>
+
+    </div>
+
+
+    <div
+        id="productGrid"
+        class="products-grid"
+    ></div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     DISEÑO
+===================================================== -->
+
+<section
+    id="diseno"
+    class="page-section"
+>
+
+    <div class="section-header">
+
+        <button
+            class="back-button"
+            onclick="mostrarSeccion('inicio')"
+        >
+            ← VOLVER
         </button>
 
 
-    </section>
+        <div>
+
+            <span class="section-number">
+                02
+            </span>
+
+            <h2>
+                ESTUDIO DE DISEÑO
+            </h2>
+
+            <p>
+                Artes gráficas preparadas para producción
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <article class="service-card">
+
+            <span class="service-number">
+                01
+            </span>
+
+            <h3>
+                Diseño sencillo
+            </h3>
+
+            <p>
+                Elaboración de diseño a un color.
+                El precio depende del tamaño y cantidad
+                de trazos.
+            </p>
+
+            <strong>
+                $45 - $60
+            </strong>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <span class="service-number">
+                02
+            </span>
+
+            <h3>
+                Diseño multicolor
+            </h3>
+
+            <p>
+                Diseños de dos o más colores.
+                Normalmente se consideran $40 por color,
+                dependiendo de la complejidad.
+            </p>
+
+            <strong>
+                $80 - $200
+            </strong>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <span class="service-number">
+                03
+            </span>
+
+            <h3>
+                Selección de color
+            </h3>
+
+            <p>
+                Cyan, magenta y amarillo con base blanca.
+            </p>
+
+            <strong>
+                $200
+            </strong>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="design-cta">
+
+        <div>
+
+            <span>
+                ¿TIENES UNA IDEA?
+            </span>
+
+            <h2>
+                Hablemos de tu diseño
+            </h2>
+
+            <p>
+                Te ayudamos a preparar tu proyecto.
+            </p>
+
+        </div>
+
+
+        <button
+            class="whatsapp-design"
+            onclick="contactarDiseno()"
+        >
+            PEDIR DISEÑO →
+        </button>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICIOS
+===================================================== -->
+
+<section
+    id="servicios"
+    class="page-section"
+>
+
+    <div class="section-header">
+
+        <button
+            class="back-button"
+            onclick="mostrarSeccion('inicio')"
+        >
+            ← VOLVER
+        </button>
+
+
+        <div>
+
+            <span class="section-number">
+                03
+            </span>
+
+            <h2>
+                SERVICIOS
+            </h2>
+
+            <p>
+                Soluciones para tu proceso de serigrafía
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="service-list">
+
+
+        <article class="service-row">
+
+            <div class="service-icon">
+                ▣
+            </div>
+
+            <div>
+
+                <h3>
+                    Elaboración de Marcos
+                </h3>
+
+                <p>
+                    El cliente proporciona el diseño físico
+                    y el marco.
+                </p>
+
+            </div>
+
+            <span>
+                DESDE $13
+            </span>
+
+        </article>
+
+
+        <article class="service-row">
+
+            <div class="service-icon">
+                ◫
+            </div>
+
+            <div>
+
+                <h3>
+                    Recuperación de Marcos
+                </h3>
+
+                <p>
+                    El marco debe entregarse sin tinta ni cinta.
+                </p>
+
+            </div>
+
+            <span>
+                DESDE $13
+            </span>
+
+        </article>
+
+
+        <article class="service-row">
+
+            <div class="service-icon">
+                ◈
+            </div>
+
+            <div>
+
+                <h3>
+                    Mesa de trabajo para serigrafía
+                </h3>
+
+                <p>
+                    Un brazo, una paleta y posicionamiento de paleta.
+                    Elaboración aproximada de 3 días hábiles.
+                </p>
+
+            </div>
+
+            <span>
+                $1,250
+            </span>
+
+        </article>
+
+
+    </div>
+
+
+    <button
+        class="contact-service"
+        onclick="contactarPedidos()"
+    >
+        CONTACTAR POR WHATSAPP →
+    </button>
+
+
+</section>
 
 
 </main>
 
 
 
-<!-- =========================
+<!-- =====================================================
      CARRITO
-========================= -->
+===================================================== -->
 
 <div
     id="overlay"
@@ -754,12 +661,10 @@
     </div>
 
 
-
     <div
         id="cartItems"
         class="cart-items"
     ></div>
-
 
 
     <div class="cart-footer">
@@ -770,9 +675,7 @@
                 TOTAL
             </span>
 
-            <strong
-                id="cartTotal"
-            >
+            <strong id="cartTotal">
                 $0.00 MXN
             </strong>
 
@@ -792,10 +695,6 @@
 </aside>
 
 
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer class="footer">
 
@@ -817,7 +716,6 @@
     </p>
 
 </footer>
-
 
 
 <script src="script.js"></script>
