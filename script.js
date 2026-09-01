@@ -1,7 +1,6 @@
 /* =========================================================
    MEGASERIGRAFICA
-   CATÁLOGO COMPLETO + CARRITO + WHATSAPP
-   VERSIÓN ACTUALIZADA
+   CATÁLOGO COMPLETO + CATEGORÍAS + CARRITO + WHATSAPP
 ========================================================= */
 
 "use strict";
@@ -15,1825 +14,931 @@ const whatsappDiseno = "525574472298";
 
 
 /* =========================================================
-   PRODUCTOS
+   CATÁLOGO
 ========================================================= */
 
-const productos = [
+const productos = [];
 
-/* =========================================================
-   1. TINTAS AHULADAS TEXTIL - FONDO CLARO
-========================================================= */
-
-{
-    id: 1,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Blanco OP",
-    precio: 97,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 2,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Negro",
-    precio: 86,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 3,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Rojo Laura",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 4,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Rojo Claro",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 5,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Azul Marino",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 6,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Azul Process",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 7,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Azul Ultra",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 8,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Verde Bandera",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 9,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Verde Esmeralda",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 10,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Amarillo Cromo",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 11,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Amarillo Limón",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 12,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Naranja",
-    precio: 92,
-    precioCuarto: 40,
-    descripcion: "Tinta ahulada textil para fondo claro.",
-    imagen: ""
-},
-
-{
-    id: 13,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Oro",
-    precio: 189,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil metálica.",
-    imagen: ""
-},
-
-{
-    id: 14,
-    categoria: "textil",
-    subcategoria: "Fondo claro",
-    nombre: "Tinta Ahulada Textil - Plata",
-    precio: 179,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil metálica.",
-    imagen: ""
-},
+let siguienteId = 1;
 
 
 /* =========================================================
-   2. FLUORESCENTES TEXTIL
+   FUNCIÓN PARA AGREGAR PRODUCTOS
 ========================================================= */
 
-{
-    id: 15,
-    categoria: "textil",
-    subcategoria: "Fluorescentes",
-    nombre: "Ahulada Textil - Amarillo Fluorescente",
-    precio: 130,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil fluorescente.",
-    imagen: ""
-},
+function agregarProducto(
+    categoria,
+    subcategoria,
+    nombre,
+    precio,
+    presentacion,
+    descripcion = "",
+    extra = ""
+) {
 
-{
-    id: 16,
-    categoria: "textil",
-    subcategoria: "Fluorescentes",
-    nombre: "Ahulada Textil - Verde Fluorescente",
-    precio: 130,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil fluorescente.",
-    imagen: ""
-},
+    productos.push({
 
-{
-    id: 17,
-    categoria: "textil",
-    subcategoria: "Fluorescentes",
-    nombre: "Ahulada Textil - Naranja Fluorescente",
-    precio: 130,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil fluorescente.",
-    imagen: ""
-},
+        id: siguienteId++,
 
-{
-    id: 18,
-    categoria: "textil",
-    subcategoria: "Fluorescentes",
-    nombre: "Ahulada Textil - Rosa Fluorescente",
-    precio: 130,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil fluorescente.",
-    imagen: ""
-},
+        categoria: categoria,
 
-{
-    id: 19,
-    categoria: "textil",
-    subcategoria: "Fluorescentes",
-    nombre: "Ahulada Textil - Magenta Fluorescente",
-    precio: 130,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil fluorescente.",
-    imagen: ""
-},
+        subcategoria: subcategoria,
 
-{
-    id: 20,
-    categoria: "textil",
-    subcategoria: "Fluorescentes",
-    nombre: "Ahulada Textil - Azul Fluorescente",
-    precio: 130,
-    precioCuarto: 60,
-    descripcion: "Tinta ahulada textil fluorescente.",
-    imagen: ""
-},
+        nombre: nombre,
+
+        precio: Number(precio),
+
+        presentacion: presentacion,
+
+        descripcion: descripcion,
+
+        extra: extra,
+
+        imagen: ""
+
+    });
+
+}
 
 
 /* =========================================================
-   3. TINTAS AHULADAS TEXTIL - FONDO OSCURO
+   1. TINTAS AHULADAS TEXTILES
+   FONDO CLARO
 ========================================================= */
 
-{
-    id: 21,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Blanco 100% Poliéster",
-    precio: 200,
-    precioCuarto: null,
-    descripcion: "Tinta especial para textiles 100% poliéster.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Blanco OP",
+    97, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 22,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Blanco OP",
-    precio: 97,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Negro",
+    86, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 23,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Rojo OP",
-    precio: 150,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Rojo Laura",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 24,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Azul Process OP",
-    precio: 150,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Rojo Claro",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 25,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Azul Ultra OP",
-    precio: 150,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Azul Marino",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 26,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Verde Bandera OP",
-    precio: 150,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Azul Proces",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 27,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Amarillo Cromo OP",
-    precio: 150,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Azul Ultra",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 28,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Amarillo Limón OP",
-    precio: 150,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Verde Bandera",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 29,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Naranja OP",
-    precio: 150,
-    precioCuarto: 55,
-    descripcion: "Tinta opaca para fondo oscuro.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Verde Esmeralda",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 30,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Oro OP Línea Caltex Sánchez",
-    precio: 590,
-    precioCuarto: 130,
-    descripcion: "Tinta metálica opaca línea Caltex Sánchez.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Amarillo Cromo",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
 
-{
-    id: 31,
-    categoria: "textil",
-    subcategoria: "Fondo oscuro",
-    nombre: "Ahulada Textil Fondo Oscuro - Plata OP Línea Caltex Sánchez",
-    precio: 590,
-    precioCuarto: 130,
-    descripcion: "Tinta metálica opaca línea Caltex Sánchez.",
-    imagen: ""
-},
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Amarillo Limón",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
+
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Naranja",
+    92, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $40");
+
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Oro",
+    189, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $60");
+
+agregarProducto("textil", "Fondo claro",
+    "Tinta Ahulada Textil - Plata",
+    179, "1 kilo",
+    "Tinta ahulada textil para fondo claro.",
+    "1/4: $60");
+
+
+/* =========================================================
+   2. FLUORESCENTES TEXTILES
+========================================================= */
+
+const fluorescentesClaros = [
+    ["Amarillo Fluorescente", 130],
+    ["Verde Fluorescente", 130],
+    ["Naranja Fluorescente", 130],
+    ["Rosa Fluorescente", 130],
+    ["Magenta Fluorescente", 130],
+    ["Azul Fluorescente", 130]
+];
+
+fluorescentesClaros.forEach(function(item) {
+
+    agregarProducto(
+        "textil",
+        "Fluorescentes",
+        "Tinta Ahulada Textil - " + item[0],
+        item[1],
+        "1 kilo",
+        "Tinta ahulada textil fluorescente.",
+        "1/4: $60"
+    );
+
+});
+
+
+/* =========================================================
+   3. TINTAS AHULADAS FONDO OSCURO
+========================================================= */
+
+agregarProducto("textil", "Fondo oscuro",
+    "Blanco 100% Poliéster Textil",
+    200, "1 kilo",
+    "Tinta especializada para impresión textil.",
+    "Solo presentación de 1 kilo");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Blanco OP",
+    97, "1 kilo",
+    "Tinta ahulada textil para fondo oscuro.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Rojo OP",
+    150, "1 kilo",
+    "Tinta ahulada textil opaca.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Azul Proces OP",
+    150, "1 kilo",
+    "Tinta ahulada textil opaca.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Azul Ultra OP",
+    150, "1 kilo",
+    "Tinta ahulada textil opaca.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Verde Bandera OP",
+    150, "1 kilo",
+    "Tinta ahulada textil opaca.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Amarillo Cromo OP",
+    150, "1 kilo",
+    "Tinta ahulada textil opaca.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Amarillo Limón OP",
+    150, "1 kilo",
+    "Tinta ahulada textil opaca.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Naranja OP",
+    150, "1 kilo",
+    "Tinta ahulada textil opaca.",
+    "1/4: $55");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Oro OP - Línea Caltex Sánchez",
+    590, "1 kilo",
+    "Tinta ahulada opaca para fondo oscuro.",
+    "1/4: $130");
+
+agregarProducto("textil", "Fondo oscuro",
+    "Plata OP - Línea Caltex Sánchez",
+    590, "1 kilo",
+    "Tinta ahulada opaca para fondo oscuro.",
+    "1/4: $130");
 
 
 /* =========================================================
    4. FLUORESCENTES OPACOS
 ========================================================= */
 
-{
-    id: 32,
-    categoria: "textil",
-    subcategoria: "Fluorescentes opacos",
-    nombre: "Ahulada Textil OP - Amarillo Fluorescente",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Tinta fluorescente opaca para fondo oscuro.",
-    imagen: ""
-},
+const fluorescentesOpacos = [
+    ["Amarillo Fluorescente OP", 160],
+    ["Verde Fluorescente OP", 160],
+    ["Naranja Fluorescente OP", 160],
+    ["Rosa Fluorescente OP", 160],
+    ["Magenta Fluorescente OP", 160],
+    ["Azul Fluorescente OP", 160]
+];
 
-{
-    id: 33,
-    categoria: "textil",
-    subcategoria: "Fluorescentes opacos",
-    nombre: "Ahulada Textil OP - Verde Fluorescente",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Tinta fluorescente opaca para fondo oscuro.",
-    imagen: ""
-},
+fluorescentesOpacos.forEach(function(item) {
 
-{
-    id: 34,
-    categoria: "textil",
-    subcategoria: "Fluorescentes opacos",
-    nombre: "Ahulada Textil OP - Naranja Fluorescente",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Tinta fluorescente opaca para fondo oscuro.",
-    imagen: ""
-},
+    agregarProducto(
+        "textil",
+        "Fluorescentes opacos",
+        item[0],
+        item[1],
+        "1 kilo",
+        "Tinta fluorescente opaca ahulada textil.",
+        "1/4: $60"
+    );
 
-{
-    id: 35,
-    categoria: "textil",
-    subcategoria: "Fluorescentes opacos",
-    nombre: "Ahulada Textil OP - Rosa Fluorescente",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Tinta fluorescente opaca para fondo oscuro.",
-    imagen: ""
-},
-
-{
-    id: 36,
-    categoria: "textil",
-    subcategoria: "Fluorescentes opacos",
-    nombre: "Ahulada Textil OP - Magenta Fluorescente",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Tinta fluorescente opaca para fondo oscuro.",
-    imagen: ""
-},
-
-{
-    id: 37,
-    categoria: "textil",
-    subcategoria: "Fluorescentes opacos",
-    nombre: "Ahulada Textil OP - Azul Fluorescente",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Tinta fluorescente opaca para fondo oscuro.",
-    imagen: ""
-},
+});
 
 
 /* =========================================================
-   5. BASES Y ADITIVOS
+   5. BASES Y ADITIVOS TEXTILES
 ========================================================= */
 
-{
-    id: 38,
-    categoria: "textil",
-    subcategoria: "Bases y aditivos",
-    nombre: "Base Opaca",
-    precio: 86,
-    precioCuarto: null,
-    descripcion: "Hace rendir más la tinta ahulada textil y proporciona acabado opaco.",
-    imagen: ""
-},
+agregarProducto("textil", "Bases y aditivos",
+    "Base Opaca",
+    86, "1 kilo",
+    "Base para hacer rendir más la tinta ahulada textil con acabado opaco.",
+    "Solo kilo");
 
-{
-    id: 39,
-    categoria: "textil",
-    subcategoria: "Bases y aditivos",
-    nombre: "Base Nova",
-    precio: 130,
-    precioCuarto: null,
-    descripcion: "Reduce el plastificante y proporciona un semi tacto cero.",
-    imagen: ""
-},
+agregarProducto("textil", "Bases y aditivos",
+    "Base Nova",
+    130, "1 kilo",
+    "Quita lo plastificante de la tinta y proporciona un semitacto cero.",
+    "Solo kilo");
 
-{
-    id: 40,
-    categoria: "textil",
-    subcategoria: "Bases y aditivos",
-    nombre: "Base BTE",
-    precio: 130,
-    precioCuarto: null,
-    descripcion: "Aumenta el rendimiento y proporciona acabado brillante.",
-    imagen: ""
-},
+agregarProducto("textil", "Bases y aditivos",
+    "Base BTE",
+    130, "1 kilo",
+    "Base para hacer rendir más la tinta ahulada textil con acabado brillante.",
+    "Solo kilo");
 
-{
-    id: 41,
-    categoria: "textil",
-    subcategoria: "Bases y aditivos",
-    nombre: "Base Glitter",
-    precio: 130,
-    precioCuarto: null,
-    descripcion: "Base especializada para encapsular partículas glitter.",
-    imagen: ""
-},
+agregarProducto("textil", "Bases y aditivos",
+    "Base Glitter",
+    130, "1 kilo",
+    "Base especializada para encapsular partículas glitter sin importar las micras.",
+    "Solo kilo");
 
-{
-    id: 42,
-    categoria: "textil",
-    subcategoria: "Bases y aditivos",
-    nombre: "Base Cristal",
-    precio: 150,
-    precioCuarto: 60,
-    descripcion: "Base brillante que encapsula la impresión y proporciona elasticidad.",
-    imagen: ""
-},
+agregarProducto("textil", "Bases y aditivos",
+    "Base Cristal",
+    150, "1 kilo",
+    "Base especializada para encapsular la impresión. Acabado brillante y elasticidad.",
+    "1/4: $60");
 
-{
-    id: 43,
-    categoria: "textil",
-    subcategoria: "Bases y aditivos",
-    nombre: "Aditivo HD - Alta Densidad",
-    precio: 285,
-    precioCuarto: null,
-    descripcion: "Aditivo para formar relieve cuadricular en la impresión.",
-    imagen: ""
-},
+agregarProducto("textil", "Bases y aditivos",
+    "Aditivo HD - Alta Densidad",
+    285, "1 kilo",
+    "Aditivo que se combina con tinta ahulada para formar relieve cuadricular.",
+    "Solo kilo");
 
-{
-    id: 44,
-    categoria: "textil",
-    subcategoria: "Bases y aditivos",
-    nombre: "Aditivo Poof",
-    precio: 890,
-    precioCuarto: 270,
-    descripcion: "Aditivo que permite inflar la tinta para formar relieves abultados.",
-    imagen: ""
-},
+agregarProducto("textil", "Bases y aditivos",
+    "Aditivo Poof",
+    890, "1 kilo",
+    "Aditivo especializado para inflar la tinta y formar relieves más abombados.",
+    "1/4: $270");
 
 
 /* =========================================================
-   6. TINTAS VINÍLICAS MATE
+   6. VINIL MATE
 ========================================================= */
 
-{
-    id: 45,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Blanco",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate base solvente.",
-    imagen: ""
-},
+const vinilMate = [
+    ["Blanco",160,60],
+    ["Negro",150,60],
+    ["Barniz",170,60],
+    ["Amarillo Cromo",155,60],
+    ["Amarillo Primoroso",155,60],
+    ["Azul Marino",165,60],
+    ["Azul Pavo",165,60],
+    ["Azul Ultra",210,60],
+    ["Naranja",180,60],
+    ["Verde Bandera",179,60],
+    ["Verde Esmeralda",179,60],
+    ["Rojo Fuego",190,60],
+    ["Rojo Medio",175,60],
+    ["Rojo Rubio",175,60],
+    ["Magenta",230,null],
+    ["Rodamina",230,85],
+    ["Oro",440,150],
+    ["Plata",265,90]
+];
 
-{
-    id: 46,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Negro",
-    precio: 150,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate base solvente.",
-    imagen: ""
-},
+vinilMate.forEach(function(item) {
 
-{
-    id: 47,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Barniz",
-    precio: 170,
-    precioCuarto: 60,
-    descripcion: "Barniz vinílico mate.",
-    imagen: ""
-},
+    agregarProducto(
+        "vinil",
+        "Vinil mate",
+        "Tinta Vinílica Mate - " + item[0],
+        item[1],
+        "1 kilo",
+        "Tinta vinílica mate base solvente para plásticos y superficies lisas.",
+        item[2] ? "1/4: $" + item[2] : "1/4 no especificado"
+    );
 
-{
-    id: 48,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Amarillo Cromo",
-    precio: 155,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 49,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Amarillo Primoroso",
-    precio: 155,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 50,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Azul Marino",
-    precio: 165,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 51,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Azul Pavo",
-    precio: 165,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 52,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Azul Ultra",
-    precio: 210,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 53,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Naranja",
-    precio: 180,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 54,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Verde Bandera",
-    precio: 179,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 55,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Verde Esmeralda",
-    precio: 179,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 56,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Rojo Fuego",
-    precio: 190,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 57,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Rojo Medio",
-    precio: 175,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 58,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Rojo Rubio",
-    precio: 175,
-    precioCuarto: 60,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 59,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Magenta",
-    precio: 230,
-    precioCuarto: 85,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 60,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Rodamina",
-    precio: 230,
-    precioCuarto: 85,
-    descripcion: "Tinta vinílica mate.",
-    imagen: ""
-},
-
-{
-    id: 61,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Oro",
-    precio: 440,
-    precioCuarto: 150,
-    descripcion: "Tinta vinílica mate metálica.",
-    imagen: ""
-},
-
-{
-    id: 62,
-    categoria: "vinil",
-    subcategoria: "Vinil Mate",
-    nombre: "Vinil Mate - Plata",
-    precio: 265,
-    precioCuarto: 90,
-    descripcion: "Tinta vinílica mate metálica.",
-    imagen: ""
-},
+});
 
 
 /* =========================================================
    7. FLUORESCENTES VINIL MATE
 ========================================================= */
 
-{
-    id: 63,
-    categoria: "vinil",
-    subcategoria: "Fluorescentes Mate",
-    nombre: "Vinil Mate - Rosa Fluorescente",
-    precio: 275,
-    precioCuarto: 85,
-    descripcion: "Tinta vinílica mate fluorescente.",
-    imagen: ""
-},
+const vinilFluo = [
+    ["Rosa Fluorescente",275,85],
+    ["Amarillo Fluorescente",275,85],
+    ["Verde Fluorescente",275,85],
+    ["Naranja Fluorescente",275,85],
+    ["Magenta Fluorescente",275,85]
+];
 
-{
-    id: 64,
-    categoria: "vinil",
-    subcategoria: "Fluorescentes Mate",
-    nombre: "Vinil Mate - Amarillo Fluorescente",
-    precio: 275,
-    precioCuarto: 85,
-    descripcion: "Tinta vinílica mate fluorescente.",
-    imagen: ""
-},
+vinilFluo.forEach(function(item) {
 
-{
-    id: 65,
-    categoria: "vinil",
-    subcategoria: "Fluorescentes Mate",
-    nombre: "Vinil Mate - Verde Fluorescente",
-    precio: 275,
-    precioCuarto: 85,
-    descripcion: "Tinta vinílica mate fluorescente.",
-    imagen: ""
-},
+    agregarProducto(
+        "vinil",
+        "Fluorescentes vinil mate",
+        "Tinta Vinílica Mate - " + item[0],
+        item[1],
+        "1 kilo",
+        "Color fluorescente para tinta vinílica mate.",
+        "1/4: $" + item[2]
+    );
 
-{
-    id: 66,
-    categoria: "vinil",
-    subcategoria: "Fluorescentes Mate",
-    nombre: "Vinil Mate - Naranja Fluorescente",
-    precio: 275,
-    precioCuarto: 85,
-    descripcion: "Tinta vinílica mate fluorescente.",
-    imagen: ""
-},
-
-{
-    id: 67,
-    categoria: "vinil",
-    subcategoria: "Fluorescentes Mate",
-    nombre: "Vinil Mate - Magenta Fluorescente",
-    precio: 275,
-    precioCuarto: 85,
-    descripcion: "Tinta vinílica mate fluorescente.",
-    imagen: ""
-},
+});
 
 
 /* =========================================================
-   8. TINTAS VINÍLICAS BRILLANTES
+   8. VINIL BRILLANTE
 ========================================================= */
 
-{
-    id: 68,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Blanco",
-    precio: 215,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
+const vinilBrillante = [
+    ["Blanco",215,65],
+    ["Negro",200,65],
+    ["Barniz",180,65],
+    ["Amarillo Cromo",200,65],
+    ["Amarillo Primoroso",200,65],
+    ["Azul Marino",210,65],
+    ["Azul Pavo",232,65],
+    ["Azul Ultra",230,65],
+    ["Naranja",220,65],
+    ["Verde Bandera",226,65],
+    ["Verde Esmeralda",226,65],
+    ["Rojo Fuego",248,65],
+    ["Rojo Medio",248,65],
+    ["Rojo Rubio",250,65],
+    ["Magenta",280,90],
+    ["Rodamina",280,90],
+    ["Oro",450,155],
+    ["Plata",270,95]
+];
 
-{
-    id: 69,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Negro",
-    precio: 200,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
+vinilBrillante.forEach(function(item) {
 
-{
-    id: 70,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Barniz",
-    precio: 180,
-    precioCuarto: 65,
-    descripcion: "Barniz vinílico brillante.",
-    imagen: ""
-},
+    agregarProducto(
+        "vinil",
+        "Vinil brillante",
+        "Tinta Vinílica Brillante - " + item[0],
+        item[1],
+        "1 kilo",
+        "Tinta vinílica brillante base solvente.",
+        "1/4: $" + item[2]
+    );
 
-{
-    id: 71,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Amarillo Cromo",
-    precio: 200,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 72,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Amarillo Primoroso",
-    precio: 200,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 73,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Azul Marino",
-    precio: 210,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 74,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Azul Pavo",
-    precio: 232,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 75,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Azul Ultra",
-    precio: 230,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 76,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Naranja",
-    precio: 220,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 77,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Verde Bandera",
-    precio: 226,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 78,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Verde Esmeralda",
-    precio: 226,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 79,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Rojo Fuego",
-    precio: 248,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 80,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Rojo Medio",
-    precio: 248,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 81,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Rojo Rubio",
-    precio: 250,
-    precioCuarto: 65,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 82,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Magenta",
-    precio: 280,
-    precioCuarto: 90,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 83,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Rodamina",
-    precio: 280,
-    precioCuarto: 90,
-    descripcion: "Tinta vinílica brillante.",
-    imagen: ""
-},
-
-{
-    id: 84,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Oro",
-    precio: 450,
-    precioCuarto: 155,
-    descripcion: "Tinta vinílica brillante metálica.",
-    imagen: ""
-},
-
-{
-    id: 85,
-    categoria: "vinil",
-    subcategoria: "Vinil Brillante",
-    nombre: "Vinil Brillante - Plata",
-    precio: 270,
-    precioCuarto: 95,
-    descripcion: "Tinta vinílica brillante metálica.",
-    imagen: ""
-},
+});
 
 
 /* =========================================================
-   9. TINTAS ESPECIALIDADES
+   9. TINTAS ESPECIALES
 ========================================================= */
 
-{
-    id: 86,
-    categoria: "especialidades",
-    subcategoria: "Non Woven",
-    nombre: "Tinta Non Woven Línea Sánchez - Blanco",
-    precio: 380,
-    precioCuarto: null,
-    descripcion: "Tinta de adherencia extrema para tela ecológica.",
-    imagen: ""
-},
+agregarProducto(
+    "especiales",
+    "Non Woven",
+    "Tinta Non Woven Línea Sánchez - Blanco",
+    380,
+    "1 kilo",
+    "Tinta especializada para tela ecológica Non Woven con fijación extrema."
+);
 
-{
-    id: 87,
-    categoria: "especialidades",
-    subcategoria: "Non Woven",
-    nombre: "Tinta Non Woven Línea Sánchez - Negro",
-    precio: 380,
-    precioCuarto: null,
-    descripcion: "Tinta de adherencia extrema para tela ecológica.",
-    imagen: ""
-},
+agregarProducto(
+    "especiales",
+    "Non Woven",
+    "Tinta Non Woven Línea Sánchez - Negro",
+    380,
+    "1 kilo",
+    "Tinta especializada para tela ecológica Non Woven con fijación extrema."
+);
 
-{
-    id: 88,
-    categoria: "especialidades",
-    subcategoria: "Policat",
-    nombre: "Tinta Policat Línea Sánchez - Blanco",
-    precio: 600,
-    precioCuarto: 190,
-    descripcion: "Tinta epóxica para cristales y aluminio.",
-    imagen: ""
-},
+agregarProducto(
+    "especiales",
+    "Policat",
+    "Tinta Policat Línea Sánchez - Blanco",
+    600,
+    "1 kilo",
+    "Tinta epóxica especializada para adherencia sobre cristales y aluminio.",
+    "1/4 de cualquier color: $190"
+);
 
-{
-    id: 89,
-    categoria: "especialidades",
-    subcategoria: "Policat",
-    nombre: "Tinta Policat Línea Sánchez - Negro",
-    precio: 600,
-    precioCuarto: 190,
-    descripcion: "Tinta epóxica para cristales y aluminio.",
-    imagen: ""
-},
+agregarProducto(
+    "especiales",
+    "Policat",
+    "Tinta Policat Línea Sánchez - Negro",
+    600,
+    "1 kilo",
+    "Tinta epóxica especializada para adherencia sobre cristales y aluminio.",
+    "1/4 de cualquier color: $190"
+);
 
 
 /* =========================================================
    10. EMULSIONES
 ========================================================= */
 
-{
-    id: 90,
-    categoria: "quimicos",
-    subcategoria: "Emulsiones",
-    nombre: "Emulsión Sericrom Línea Sánchez",
-    precio: 175,
-    precioCuarto: null,
-    descripcion: "Emulsión para preparación de mallas.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Emulsiones",
+    "Emulsión Sericrom - Línea Sánchez",
+    175,
+    "1 litro",
+    "Emulsión para preparación de mallas."
+);
 
-{
-    id: 91,
-    categoria: "quimicos",
-    subcategoria: "Emulsiones",
-    nombre: "Emulsión Diazol Línea Sánchez",
-    precio: 175,
-    precioCuarto: null,
-    descripcion: "Emulsión para preparación de mallas.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Emulsiones",
+    "Emulsión Diazol - Línea Sánchez",
+    175,
+    "1 litro",
+    "Emulsión para preparación de mallas."
+);
 
-{
-    id: 92,
-    categoria: "quimicos",
-    subcategoria: "Emulsiones",
-    nombre: "Bicromato",
-    precio: 258,
-    precioCuarto: 60,
-    descripcion: "Producto para preparación de emulsión.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Emulsiones",
+    "Bicromato",
+    258,
+    "1 litro",
+    "Sensibilizador para preparación de emulsiones.",
+    "1/4: $60"
+);
 
-{
-    id: 93,
-    categoria: "quimicos",
-    subcategoria: "Emulsiones",
-    nombre: "Emulsión Preparada Sericrom",
-    precio: 240,
-    precioCuarto: 65,
-    descripcion: "Emulsión preparada lista para aplicación.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Emulsiones",
+    "Emulsión Preparada Sericrom",
+    240,
+    "1 litro",
+    "Emulsión preparada lista para trabajar.",
+    "1/4: $65"
+);
 
-{
-    id: 94,
-    categoria: "quimicos",
-    subcategoria: "Emulsiones",
-    nombre: "Emulsión Preparada Diazol",
-    precio: 240,
-    precioCuarto: 65,
-    descripcion: "Emulsión preparada lista para aplicación.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Emulsiones",
+    "Emulsión Preparada Diazol",
+    240,
+    "1 litro",
+    "Emulsión preparada lista para trabajar.",
+    "1/4: $65"
+);
 
 
 /* =========================================================
    11. RECUPERACIÓN
 ========================================================= */
 
-{
-    id: 95,
-    categoria: "quimicos",
-    subcategoria: "Recuperación",
-    nombre: "Sericlin Línea Sánchez",
-    precio: 253,
-    precioCuarto: null,
-    descripcion: "Producto para recuperación y limpieza de mallas.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Recuperación",
+    "Sericlin - Línea Sánchez",
+    253,
+    "1 litro",
+    "Producto para recuperación y limpieza de mallas."
+);
 
-{
-    id: 96,
-    categoria: "quimicos",
-    subcategoria: "Recuperación",
-    nombre: "Serisol Línea Sánchez",
-    precio: 270,
-    precioCuarto: null,
-    descripcion: "Producto químico para recuperación.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Recuperación",
+    "Serisol - Línea Sánchez",
+    270,
+    "1 litro",
+    "Producto químico para recuperación de mallas."
+);
 
-{
-    id: 97,
-    categoria: "quimicos",
-    subcategoria: "Recuperación",
-    nombre: "Seripasta Línea Sánchez",
-    precio: 159,
-    precioCuarto: null,
-    descripcion: "Pasta para recuperación de mallas. Presentación de 1 litro.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Recuperación",
+    "Seripasta - Línea Sánchez",
+    159,
+    "1 litro",
+    "Producto para recuperación de mallas."
+);
 
 
 /* =========================================================
    12. SOLVENTES
 ========================================================= */
 
-{
-    id: 98,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "Adhesivo Líquido",
-    precio: 160,
-    precioCuarto: 60,
-    descripcion: "Adhesivo líquido para procesos de serigrafía.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "Adhesivo Líquido",
+    160,
+    "1 litro",
+    "Adhesivo líquido para procesos de serigrafía.",
+    "1/4: $60"
+);
 
-{
-    id: 99,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "Solvente Xilol",
-    precio: 65,
-    precioCuarto: null,
-    descripcion: "Solvente para serigrafía.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "Solvente Xilol",
+    65,
+    "1 litro",
+    "Solvente para procesos de serigrafía."
+);
 
-{
-    id: 100,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "Solvente Vinil",
-    precio: 88,
-    precioCuarto: null,
-    descripcion: "Solvente especializado para tintas vinílicas.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "Solvente Vinil",
+    88,
+    "1 litro",
+    "Solvente especializado para tintas vinílicas."
+);
 
-{
-    id: 101,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "Isoforona",
-    precio: 170,
-    precioCuarto: null,
-    descripcion: "Solvente para aplicaciones de serigrafía.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "Isoforona",
+    170,
+    "1 litro",
+    "Solvente especializado para aplicaciones técnicas."
+);
 
-{
-    id: 102,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "P700 Línea Sánchez",
-    precio: 280,
-    precioCuarto: null,
-    descripcion: "Solvente Línea Sánchez.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "P700 - Línea Sánchez",
+    280,
+    "1 litro",
+    "Solvente Línea Sánchez."
+);
 
-{
-    id: 103,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "P500 Línea Sánchez",
-    precio: 205,
-    precioCuarto: null,
-    descripcion: "Solvente Línea Sánchez.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "P500 - Línea Sánchez",
+    205,
+    "1 litro",
+    "Solvente Línea Sánchez."
+);
 
-{
-    id: 104,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "P400 Línea Sánchez",
-    precio: 205,
-    precioCuarto: null,
-    descripcion: "Solvente Línea Sánchez.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "P400 - Línea Sánchez",
+    205,
+    "1 litro",
+    "Solvente Línea Sánchez."
+);
 
-{
-    id: 105,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "P200 Línea Sánchez",
-    precio: 150,
-    precioCuarto: null,
-    descripcion: "Solvente Línea Sánchez.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "P200 - Línea Sánchez",
+    150,
+    "1 litro",
+    "Solvente Línea Sánchez."
+);
 
-{
-    id: 106,
-    categoria: "quimicos",
-    subcategoria: "Solventes",
-    nombre: "P100 Línea Sánchez",
-    precio: 150,
-    precioCuarto: null,
-    descripcion: "Solvente Línea Sánchez.",
-    imagen: ""
-},
+agregarProducto(
+    "quimicos",
+    "Solventes",
+    "P100 - Línea Sánchez",
+    150,
+    "1 litro",
+    "Solvente Línea Sánchez."
+);
 
 
 /* =========================================================
    13. MARCOS
 ========================================================= */
 
-{
-    id: 107,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 20x30 - Malla T62",
-    precio: 53,
-    descripcion: "Marco para serigrafía con malla T62.",
-    imagen: ""
-},
-
-{
-    id: 108,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 20x30 - Malla T90",
-    precio: 55,
-    descripcion: "Marco para serigrafía con malla T90.",
-    imagen: ""
-},
-
-{
-    id: 109,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 20x30 - Malla T120",
-    precio: 58,
-    descripcion: "Marco para serigrafía con malla T120.",
-    imagen: ""
-},
-
-{
-    id: 110,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 30x40 - Malla T62",
-    precio: 65,
-    descripcion: "Marco para serigrafía con malla T62.",
-    imagen: ""
-},
-
-{
-    id: 111,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 30x40 - Malla T90",
-    precio: 78,
-    descripcion: "Marco para serigrafía con malla T90.",
-    imagen: ""
-},
-
-{
-    id: 112,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 30x40 - Malla T120",
-    precio: 88,
-    descripcion: "Marco para serigrafía con malla T120.",
-    imagen: ""
-},
-
-{
-    id: 113,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 40x50 - Malla T62",
-    precio: 82,
-    descripcion: "Marco para serigrafía con malla T62.",
-    imagen: ""
-},
-
-{
-    id: 114,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 40x50 - Malla T90",
-    precio: 95,
-    descripcion: "Marco para serigrafía con malla T90.",
-    imagen: ""
-},
-
-{
-    id: 115,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 40x50 - Malla T120",
-    precio: 105,
-    descripcion: "Marco para serigrafía con malla T120.",
-    imagen: ""
-},
-
-{
-    id: 116,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 50x60 - Malla T62",
-    precio: 165,
-    descripcion: "Marco para serigrafía con malla T62.",
-    imagen: ""
-},
-
-{
-    id: 117,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 50x60 - Malla T90",
-    precio: 200,
-    descripcion: "Marco para serigrafía con malla T90.",
-    imagen: ""
-},
-
-{
-    id: 118,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 50x60 - Malla T120",
-    precio: 238,
-    descripcion: "Marco para serigrafía con malla T120.",
-    imagen: ""
-},
-
-{
-    id: 119,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 60x70 - Malla T62",
-    precio: 240,
-    descripcion: "Marco para serigrafía con malla T62.",
-    imagen: ""
-},
-
-{
-    id: 120,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 60x70 - Malla T90",
-    precio: 260,
-    descripcion: "Marco para serigrafía con malla T90.",
-    imagen: ""
-},
-
-{
-    id: 121,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 60x70 - Malla T120",
-    precio: 275,
-    descripcion: "Marco para serigrafía con malla T120.",
-    imagen: ""
-},
-
-{
-    id: 122,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 70x80 - Malla T62",
-    precio: 320,
-    descripcion: "Marco para serigrafía con malla T62.",
-    imagen: ""
-},
-
-{
-    id: 123,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 70x80 - Malla T90",
-    precio: 340,
-    descripcion: "Marco para serigrafía con malla T90.",
-    imagen: ""
-},
-
-{
-    id: 124,
-    categoria: "marcos",
-    subcategoria: "Marcos",
-    nombre: "Marco 70x80 - Malla T120",
-    precio: 410,
-    descripcion: "Marco para serigrafía con malla T120.",
-    imagen: ""
-},
-
-
-/* =========================================================
-   14. SERVICIO DE MARCOS
-========================================================= */
-
-{
-    id: 125,
-    categoria: "marcos",
-    subcategoria: "Elaboración",
-    nombre: "Elaboración de Marco 20x30",
-    precio: 13,
-    descripcion: "Trayendo usted el diseño físico y el marco.",
-    imagen: ""
-},
-
-{
-    id: 126,
-    categoria: "marcos",
-    subcategoria: "Elaboración",
-    nombre: "Elaboración de Marco 30x40",
-    precio: 14,
-    descripcion: "Trayendo usted el diseño físico y el marco.",
-    imagen: ""
-},
-
-{
-    id: 127,
-    categoria: "marcos",
-    subcategoria: "Elaboración",
-    nombre: "Elaboración de Marco 40x50",
-    precio: 15,
-    descripcion: "Trayendo usted el diseño físico y el marco.",
-    imagen: ""
-},
-
-{
-    id: 128,
-    categoria: "marcos",
-    subcategoria: "Elaboración",
-    nombre: "Elaboración de Marco 50x60",
-    precio: 30,
-    descripcion: "Trayendo usted el diseño físico y el marco.",
-    imagen: ""
-},
-
-{
-    id: 129,
-    categoria: "marcos",
-    subcategoria: "Elaboración",
-    nombre: "Elaboración de Marco 60x70",
-    precio: 50,
-    descripcion: "Trayendo usted el diseño físico y el marco.",
-    imagen: ""
-},
-
-{
-    id: 130,
-    categoria: "marcos",
-    subcategoria: "Elaboración",
-    nombre: "Elaboración de Marco 70x80",
-    precio: 80,
-    descripcion: "Trayendo usted el diseño físico y el marco.",
-    imagen: ""
-},
-
-{
-    id: 131,
-    categoria: "marcos",
-    subcategoria: "Recuperación",
-    nombre: "Recuperación de Marco 20x30",
-    precio: 13,
-    descripcion: "Trayendo el marco sin tinta ni cinta.",
-    imagen: ""
-},
-
-{
-    id: 132,
-    categoria: "marcos",
-    subcategoria: "Recuperación",
-    nombre: "Recuperación de Marco 30x40",
-    precio: 14,
-    descripcion: "Trayendo el marco sin tinta ni cinta.",
-    imagen: ""
-},
-
-{
-    id: 133,
-    categoria: "marcos",
-    subcategoria: "Recuperación",
-    nombre: "Recuperación de Marco 40x50",
-    precio: 15,
-    descripcion: "Trayendo el marco sin tinta ni cinta.",
-    imagen: ""
-},
-
-{
-    id: 134,
-    categoria: "marcos",
-    subcategoria: "Recuperación",
-    nombre: "Recuperación de Marco 50x60",
-    precio: 30,
-    descripcion: "Trayendo el marco sin tinta ni cinta.",
-    imagen: ""
-},
-
-{
-    id: 135,
-    categoria: "marcos",
-    subcategoria: "Recuperación",
-    nombre: "Recuperación de Marco 60x70",
-    precio: 50,
-    descripcion: "Trayendo el marco sin tinta ni cinta.",
-    imagen: ""
-},
-
-{
-    id: 136,
-    categoria: "marcos",
-    subcategoria: "Recuperación",
-    nombre: "Recuperación de Marco 70x80",
-    precio: 80,
-    descripcion: "Trayendo el marco sin tinta ni cinta.",
-    imagen: ""
-},
-
-
-/* =========================================================
-   15. RACEROS
-========================================================= */
-
-{
-    id: 137,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 5 cm",
-    precio: 30,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 138,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 10 cm",
-    precio: 55,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 139,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 15 cm",
-    precio: 65,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 140,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 20 cm",
-    precio: 78,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 141,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 25 cm",
-    precio: 105,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 142,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 30 cm",
-    precio: 120,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 143,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 35 cm",
-    precio: 140,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 144,
-    categoria: "raceros",
-    subcategoria: "Raceros",
-    nombre: "Racero 40 cm",
-    precio: 160,
-    descripcion: "Racero para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 145,
-    categoria: "raceros",
-    subcategoria: "Hule",
-    nombre: "Hule para Racero",
-    precio: 4,
-    descripcion: "Precio por centímetro de hule para racero.",
-    imagen: ""
-},
-
-
-/* =========================================================
-   16. DISEÑO GRÁFICO
-========================================================= */
-
-{
-    id: 146,
-    categoria: "diseno",
-    subcategoria: "Diseño gráfico",
-    nombre: "Diseño a un color sencillo",
-    precio: 45,
-    precioMaximo: 60,
-    descripcion: "Diseño a un color. El precio depende del tamaño y cantidad de trazos.",
-    imagen: ""
-},
-
-{
-    id: 147,
-    categoria: "diseno",
-    subcategoria: "Diseño gráfico",
-    nombre: "Diseño de 2 o más colores",
-    precio: 80,
-    precioMaximo: 200,
-    descripcion: "Diseños de 2 o más colores. Normalmente $40 por color.",
-    imagen: ""
-},
-
-{
-    id: 148,
-    categoria: "diseno",
-    subcategoria: "Diseño gráfico",
-    nombre: "Diseño CYAN + MAGENTA + AMARILLO + Blanco",
-    precio: 200,
-    descripcion: "Diseño a selección de color con base blanca.",
-    imagen: ""
-},
-
-
-/* =========================================================
-   17. OTROS PRODUCTOS
-========================================================= */
-
-{
-    id: 149,
-    categoria: "otros",
-    subcategoria: "Accesorios",
-    nombre: "Catalizador Policat",
-    precio: 760,
-    precioCuarto: 195,
-    descripcion: "Catalizador para tinta Policat. Línea Sánchez.",
-    imagen: ""
-},
-
-{
-    id: 150,
-    categoria: "otros",
-    subcategoria: "Accesorios",
-    nombre: "Sericur - Endurecedor de Mallas",
-    precio: 115,
-    descripcion: "Endurecedor de mallas. Presentación 280 g.",
-    imagen: ""
-},
-
-{
-    id: 151,
-    categoria: "otros",
-    subcategoria: "Adhesivos",
-    nombre: "Adhesivo Spray Excelink 270 g",
-    precio: 115,
-    descripcion: "Adhesivo spray para procesos de serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 152,
-    categoria: "otros",
-    subcategoria: "Adhesivos",
-    nombre: "Adhesivo Spray Cliclon 420 g",
-    precio: 97,
-    descripcion: "Adhesivo spray para procesos de serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 153,
-    categoria: "otros",
-    subcategoria: "Sprays",
-    nombre: "Silicón Spray 230 g",
-    precio: 130,
-    descripcion: "Silicón spray.",
-    imagen: ""
-},
-
-{
-    id: 154,
-    categoria: "otros",
-    subcategoria: "Sprays",
-    nombre: "Destapador de Mallas Spray",
-    precio: 130,
-    descripcion: "Producto para destapar mallas.",
-    imagen: ""
-},
-
-{
-    id: 155,
-    categoria: "otros",
-    subcategoria: "Accesorios",
-    nombre: "Bisagras para Serigrafía - Par",
-    precio: 210,
-    descripcion: "Par de bisagras para serigrafía.",
-    imagen: ""
-},
-
-{
-    id: 156,
-    categoria: "otros",
-    subcategoria: "Plancha",
-    nombre: "Teflón para Plancha 40x40",
-    precio: 140,
-    descripcion: "Incluye varillas y resorte.",
-    imagen: ""
-},
-
-{
-    id: 157,
-    categoria: "otros",
-    subcategoria: "Plancha",
-    nombre: "Resorte para Plancha o Pulpo",
-    precio: 85,
-    descripcion: "Precio por pieza.",
-    imagen: ""
-},
-
-
-/* =========================================================
-   18. CINTAS
-========================================================= */
-
-{
-    id: 158,
-    categoria: "cintas",
-    subcategoria: "Empaque",
-    nombre: "Cinta para Empaquetar 48x150",
-    precio: 25,
-    descripcion: "Cinta para empaquetar. Precio por pieza.",
-    imagen: ""
-},
-
-{
-    id: 159,
-    categoria: "cintas",
-    subcategoria: "Empaque",
-    nombre: "Cinta para Empaquetar 48x130",
-    precio: 25,
-    descripcion: "Cinta para empaquetar. Precio por pieza.",
-    imagen: ""
-},
-
-{
-    id: 160,
-    categoria: "cintas",
-    subcategoria: "Empaque",
-    nombre: "Cinta para Empaquetar - Paquete de 6",
-    precio: 23,
-    descripcion: "Paquete de 6 cintas. Precio por pieza: $23. Total del paquete: $138.",
-    imagen: ""
-},
-
-
-/* =========================================================
-   19. EQUIPO / MESA
-========================================================= */
-
-{
-    id: 161,
-    categoria: "equipo",
-    subcategoria: "Mesa de trabajo",
-    nombre: "Mesa de Trabajo - 1 Brazo / 1 Paleta / Posicionamiento",
-    precio: 1250,
-    descripcion: "Mesa de trabajo con un brazo, una paleta y posicionamiento de paleta. Tiempo de entrega: 3 días hábiles.",
-    imagen: ""
-}
+const marcos = [
+
+    ["20x30","T62",53],
+    ["20x30","T90",55],
+    ["20x30","T120",58],
+
+    ["30x40","T62",65],
+    ["30x40","T90",78],
+    ["30x40","T120",88],
+
+    ["40x50","T62",82],
+    ["40x50","T90",95],
+    ["40x50","T120",105],
+
+    ["50x60","T62",165],
+    ["50x60","T90",200],
+    ["50x60","T120",238],
+
+    ["60x70","T62",240],
+    ["60x70","T90",260],
+    ["60x70","T120",275],
+
+    ["70x80","T62",320],
+    ["70x80","T90",340],
+    ["70x80","T120",410]
 
 ];
+
+marcos.forEach(function(item) {
+
+    agregarProducto(
+        "marcos",
+        item[0],
+        "Marco para Serigrafía " + item[0] + " - Malla " + item[1],
+        item[2],
+        "1 pieza",
+        "Marco para serigrafía.",
+        "Malla " + item[1]
+    );
+
+});
+
+
+/* =========================================================
+   14. ELABORACIÓN DE MARCOS
+========================================================= */
+
+const elaboracion = [
+    ["20x30",13],
+    ["30x40",14],
+    ["40x50",15],
+    ["50x60",30],
+    ["60x70",50],
+    ["70x80",80]
+];
+
+elaboracion.forEach(function(item) {
+
+    agregarProducto(
+        "marcos",
+        "Elaboración",
+        "Elaboración de Marco " + item[0],
+        item[1],
+        "Servicio",
+        "Trayendo usted el diseño físico y el marco."
+    );
+
+});
+
+
+/* =========================================================
+   15. RECUPERACIÓN DE MARCOS
+========================================================= */
+
+elaboracion.forEach(function(item) {
+
+    agregarProducto(
+        "marcos",
+        "Recuperación",
+        "Recuperación de Marco " + item[0],
+        item[1],
+        "Servicio",
+        "Trayendo el marco sin tinta ni cinta."
+    );
+
+});
+
+
+/* =========================================================
+   16. RACEROS
+========================================================= */
+
+const raceros = [
+    [5,30],
+    [10,55],
+    [15,65],
+    [20,78],
+    [25,105],
+    [30,120],
+    [35,140],
+    [40,160]
+];
+
+raceros.forEach(function(item) {
+
+    agregarProducto(
+        "herramientas",
+        "Raceros",
+        "Racero " + item[0] + " cm",
+        item[1],
+        "1 pieza",
+        "Racero profesional para serigrafía."
+    );
+
+});
+
+agregarProducto(
+    "herramientas",
+    "Raceros",
+    "Hule para Racero",
+    4,
+    "1 cm",
+    "Hule para fabricación o reparación de raceros.",
+    "$4 por cm"
+);
+
+
+/* =========================================================
+   17. DISEÑO GRÁFICO
+========================================================= */
+
+agregarProducto(
+    "servicios",
+    "Diseño gráfico",
+    "Diseño a un color sencillo",
+    45,
+    "Servicio",
+    "Diseño gráfico para serigrafía. El precio depende del tamaño y los trazos.",
+    "Rango: $45 a $60"
+);
+
+agregarProducto(
+    "servicios",
+    "Diseño gráfico",
+    "Diseño de 2 o más colores",
+    80,
+    "Servicio",
+    "Diseño gráfico multicolor.",
+    "Rango: $80 a $200. Normalmente $40 por color."
+);
+
+agregarProducto(
+    "servicios",
+    "Diseño gráfico",
+    "Diseño Cyan + Magenta + Amarillo + Base Blanca",
+    200,
+    "Servicio",
+    "Selección de color para serigrafía.",
+    "Precio: $200"
+);
+
+
+/* =========================================================
+   18. OTROS PRODUCTOS
+========================================================= */
+
+agregarProducto(
+    "otros",
+    "Catalizadores",
+    "Catalizador Policat",
+    760,
+    "1 litro",
+    "Catalizador para sistema Policat.",
+    "1/4: $195"
+);
+
+agregarProducto(
+    "otros",
+    "Químicos",
+    "Sericur - Endurecedor de Mallas",
+    115,
+    "1 litro",
+    "Endurecedor de mallas.",
+    "Presentación adicional: 280 g"
+);
+
+agregarProducto(
+    "otros",
+    "Adhesivos",
+    "Adhesivo Spray Excelink",
+    115,
+    "270 g",
+    "Adhesivo spray para procesos de serigrafía."
+);
+
+agregarProducto(
+    "otros",
+    "Adhesivos",
+    "Adhesivo Spray Cliclon",
+    97,
+    "420 g",
+    "Adhesivo spray para procesos de serigrafía."
+);
+
+agregarProducto(
+    "otros",
+    "Sprays",
+    "Silicón Spray",
+    130,
+    "230 g",
+    "Silicón spray para procesos de serigrafía."
+);
+
+agregarProducto(
+    "otros",
+    "Sprays",
+    "Destapador de Mallas Spray",
+    130,
+    "1 pieza",
+    "Producto para destapar mallas."
+);
+
+agregarProducto(
+    "otros",
+    "Accesorios",
+    "Bisagras para Serigrafía",
+    210,
+    "Par",
+    "Bisagras para serigrafía."
+);
+
+agregarProducto(
+    "otros",
+    "Planchas",
+    "Teflón para Plancha 40x40",
+    140,
+    "1 pieza",
+    "Teflón para plancha. Incluye varillas y resorte."
+);
+
+agregarProducto(
+    "otros",
+    "Planchas",
+    "Resorte para Plancha o Pulpo",
+    85,
+    "1 pieza",
+    "Resorte para plancha o pulpo."
+);
+
+
+/* =========================================================
+   19. CINTAS
+========================================================= */
+
+agregarProducto(
+    "otros",
+    "Cintas",
+    "Cinta para Empaquetar 48x150",
+    25,
+    "1 pieza",
+    "Cinta para empaquetar.",
+    "Paquete de 6: $23 por pieza / $138 el paquete"
+);
+
+agregarProducto(
+    "otros",
+    "Cintas",
+    "Cinta para Empaquetar 48x130",
+    25,
+    "1 pieza",
+    "Cinta para empaquetar.",
+    "Paquete de 6: $23 por pieza / $138 el paquete"
+);
+
+
+/* =========================================================
+   20. EQUIPO
+========================================================= */
+
+agregarProducto(
+    "equipo",
+    "Mesas",
+    "Mesa de Trabajo para Serigrafía",
+    1250,
+    "1 equipo",
+    "Mesa de trabajo con un brazo, una paleta y posicionamiento de paleta.",
+    "Tiempo de elaboración: 3 días hábiles"
+);
 
 
 /* =========================================================
@@ -1844,11 +949,76 @@ let carrito = [];
 
 
 /* =========================================================
+   NOMBRES Y CONFIGURACIÓN DE CATEGORÍAS
+========================================================= */
+
+const configuracionCategorias = {
+
+    textil: {
+        nombre: "Tintas Ahuladas Textiles",
+        icono: "◉",
+        descripcion: "Tintas, fluorescentes, bases y aditivos"
+    },
+
+    vinil: {
+        nombre: "Tintas Vinílicas",
+        icono: "◆",
+        descripcion: "Vinil mate y vinil brillante"
+    },
+
+    especiales: {
+        nombre: "Tintas Especiales",
+        icono: "✦",
+        descripcion: "Non Woven y Policat"
+    },
+
+    quimicos: {
+        nombre: "Emulsiones y Químicos",
+        icono: "⚗",
+        descripcion: "Emulsiones, recuperación y solventes"
+    },
+
+    marcos: {
+        nombre: "Marcos",
+        icono: "▣",
+        descripcion: "Marcos, elaboración y recuperación"
+    },
+
+    herramientas: {
+        nombre: "Raceros",
+        icono: "▰",
+        descripcion: "Raceros y hule"
+    },
+
+    servicios: {
+        nombre: "Diseño Gráfico",
+        icono: "✎",
+        descripcion: "Diseños para serigrafía"
+    },
+
+    otros: {
+        nombre: "Otros Productos",
+        icono: "⚙",
+        descripcion: "Adhesivos, sprays y accesorios"
+    },
+
+    equipo: {
+        nombre: "Equipo",
+        icono: "◈",
+        descripcion: "Mesas y equipo para serigrafía"
+    }
+
+};
+
+
+/* =========================================================
    UTILIDADES
 ========================================================= */
 
 function elemento(id) {
+
     return document.getElementById(id);
+
 }
 
 
@@ -1858,43 +1028,104 @@ function elemento(id) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    generarCategorias();
+
     mostrarTodosProductos();
 
     actualizarCarrito();
 
     console.log(
-        "MEGASERIGRAFICA: JavaScript cargado correctamente."
+        "MEGASERIGRAFICA: " +
+        productos.length +
+        " productos cargados."
     );
 
 });
 
 
 /* =========================================================
-   NAVEGACIÓN
+   GENERAR CATEGORÍAS
 ========================================================= */
 
-function mostrarSeccion(id) {
+function generarCategorias() {
 
-    const secciones =
-        document.querySelectorAll(".page-section");
+    const contenedor = elemento("categoriesGrid");
 
-    secciones.forEach(function (seccion) {
+    if (!contenedor) {
 
-        seccion.classList.remove("active");
+        console.warn(
+            "No existe #categoriesGrid en el HTML."
+        );
 
-    });
-
-    const seccionActiva = elemento(id);
-
-    if (seccionActiva) {
-
-        seccionActiva.classList.add("active");
+        return;
 
     }
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    contenedor.innerHTML = "";
+
+    Object.keys(configuracionCategorias).forEach(function(categoria) {
+
+        const config =
+            configuracionCategorias[categoria];
+
+        const cantidad =
+            productos.filter(function(producto) {
+
+                return producto.categoria === categoria;
+
+            }).length;
+
+
+        const boton =
+            document.createElement("button");
+
+        boton.type = "button";
+
+        boton.className =
+            "category-card";
+
+
+        boton.innerHTML = `
+
+            <span class="category-icon">
+                ${config.icono}
+            </span>
+
+            <div class="category-content">
+
+                <strong>
+                    ${config.nombre}
+                </strong>
+
+                <span>
+                    ${config.descripcion}
+                </span>
+
+                <small>
+                    ${cantidad} productos
+                </small>
+
+            </div>
+
+            <span class="category-arrow">
+                →
+            </span>
+
+        `;
+
+
+        boton.addEventListener(
+            "click",
+            function() {
+
+                filtrarCategoria(categoria);
+
+            }
+        );
+
+
+        contenedor.appendChild(boton);
+
     });
 
 }
@@ -1909,6 +1140,7 @@ function mostrarProductos(listaProductos) {
     const productGrid =
         elemento("productGrid");
 
+
     if (!productGrid) {
 
         console.warn(
@@ -1919,12 +1151,38 @@ function mostrarProductos(listaProductos) {
 
     }
 
+
     productGrid.innerHTML = "";
 
-    listaProductos.forEach(function (producto) {
+
+    if (listaProductos.length === 0) {
+
+        productGrid.innerHTML = `
+
+            <div class="empty-cart">
+
+                <h3>
+                    No hay productos
+                </h3>
+
+                <p>
+                    No encontramos productos en esta categoría.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    listaProductos.forEach(function(producto) {
 
         const tarjeta =
             document.createElement("article");
+
 
         tarjeta.className =
             "product-card";
@@ -1932,90 +1190,99 @@ function mostrarProductos(listaProductos) {
 
         let imagenHTML = "";
 
+
         if (
             producto.imagen &&
             producto.imagen.trim() !== ""
         ) {
 
             imagenHTML = `
+
                 <img
                     src="${producto.imagen}"
                     alt="${producto.nombre}"
                     loading="lazy"
                 >
+
             `;
 
         } else {
 
             imagenHTML = `
+
                 <div class="product-placeholder">
-                    FOTO
+                    ${obtenerIconoProducto(producto.categoria)}
                 </div>
+
             `;
 
         }
 
 
-        let preciosHTML = `
-            <div class="product-price">
-                $${Number(producto.precio).toFixed(2)}
-                <small>/ kilo o presentación principal</small>
-            </div>
-        `;
+        const precioPrincipal =
+            `$${producto.precio.toFixed(2)}`;
 
 
-        if (
-            producto.precioCuarto !== null &&
-            producto.precioCuarto !== undefined
-        ) {
-
-            preciosHTML += `
-                <div class="product-secondary-price">
-                    1/4 kg:
-                    $${Number(producto.precioCuarto).toFixed(2)}
-                </div>
-            `;
-
-        }
+        const presentacion =
+            producto.presentacion
+            ? producto.presentacion
+            : "";
 
 
-        if (
-            producto.precioMaximo !== undefined
-        ) {
-
-            preciosHTML += `
-                <div class="product-secondary-price">
-                    Precio según trabajo:
-                    hasta $${Number(producto.precioMaximo).toFixed(2)}
-                </div>
-            `;
-
-        }
+        const extra =
+            producto.extra
+            ? `<small class="product-extra">
+                    ${producto.extra}
+               </small>`
+            : "";
 
 
         tarjeta.innerHTML = `
 
             <div class="product-image">
+
                 ${imagenHTML}
+
             </div>
+
 
             <div class="product-info">
 
                 <span class="product-category">
-                    ${producto.subcategoria || ""}
+
+                    ${producto.subcategoria}
+
                 </span>
+
 
                 <h3>
                     ${producto.nombre}
                 </h3>
 
+
                 <p>
                     ${producto.descripcion}
                 </p>
 
-                ${preciosHTML}
+
+                <div class="product-presentation">
+
+                    ${presentacion}
+
+                </div>
+
+
+                ${extra}
+
 
                 <div class="product-bottom">
+
+                    <span class="product-price">
+
+                        ${precioPrincipal}
+
+                    </span>
+
 
                     <button
                         class="add-button"
@@ -2032,6 +1299,7 @@ function mostrarProductos(listaProductos) {
 
         `;
 
+
         productGrid.appendChild(tarjeta);
 
     });
@@ -2040,52 +1308,55 @@ function mostrarProductos(listaProductos) {
 
 
 /* =========================================================
-   FILTROS
+   ICONOS
+========================================================= */
+
+function obtenerIconoProducto(categoria) {
+
+    const iconos = {
+
+        textil: "◉",
+
+        vinil: "◆",
+
+        especiales: "✦",
+
+        quimicos: "⚗",
+
+        marcos: "▣",
+
+        herramientas: "▰",
+
+        servicios: "✎",
+
+        otros: "⚙",
+
+        equipo: "◈"
+
+    };
+
+
+    return iconos[categoria] || "•";
+
+}
+
+
+/* =========================================================
+   FILTRAR CATEGORÍA
 ========================================================= */
 
 function filtrarCategoria(categoria) {
 
     const filtrados =
-        productos.filter(function (producto) {
+        productos.filter(function(producto) {
 
             return producto.categoria === categoria;
 
         });
 
 
-    const nombresCategorias = {
-
-        textil:
-            "Tintas Ahuladas Textiles",
-
-        vinil:
-            "Tintas Vinílicas",
-
-        especialidades:
-            "Tintas Especiales",
-
-        quimicos:
-            "Emulsiones y Químicos",
-
-        marcos:
-            "Marcos y Servicios",
-
-        raceros:
-            "Raceros",
-
-        diseno:
-            "Diseño Gráfico",
-
-        otros:
-            "Otros Productos",
-
-        cintas:
-            "Cintas",
-
-        equipo:
-            "Equipo"
-
-    };
+    const config =
+        configuracionCategorias[categoria];
 
 
     const categoryTitle =
@@ -2095,8 +1366,9 @@ function filtrarCategoria(categoria) {
     if (categoryTitle) {
 
         categoryTitle.textContent =
-            nombresCategorias[categoria] ||
-            "Productos";
+            config
+                ? config.nombre
+                : "Productos";
 
     }
 
@@ -2110,16 +1382,56 @@ function filtrarCategoria(categoria) {
 
     if (productGrid) {
 
-        setTimeout(function () {
+        setTimeout(function() {
 
             productGrid.scrollIntoView({
+
                 behavior: "smooth",
+
                 block: "start"
+
             });
 
         }, 100);
 
     }
+
+}
+
+
+/* =========================================================
+   FILTRAR SUBCATEGORÍA
+========================================================= */
+
+function filtrarSubcategoria(
+    categoria,
+    subcategoria
+) {
+
+    const filtrados =
+        productos.filter(function(producto) {
+
+            return (
+                producto.categoria === categoria &&
+                producto.subcategoria === subcategoria
+            );
+
+        });
+
+
+    const categoryTitle =
+        elemento("categoryTitle");
+
+
+    if (categoryTitle) {
+
+        categoryTitle.textContent =
+            subcategoria;
+
+    }
+
+
+    mostrarProductos(filtrados);
 
 }
 
@@ -2137,7 +1449,7 @@ function mostrarTodosProductos() {
     if (categoryTitle) {
 
         categoryTitle.textContent =
-            "Todos nuestros productos";
+            "Todos los productos";
 
     }
 
@@ -2154,7 +1466,7 @@ function mostrarTodosProductos() {
 function agregarAlCarrito(idProducto) {
 
     const producto =
-        productos.find(function (item) {
+        productos.find(function(item) {
 
             return item.id === idProducto;
 
@@ -2163,18 +1475,13 @@ function agregarAlCarrito(idProducto) {
 
     if (!producto) {
 
-        console.warn(
-            "Producto no encontrado:",
-            idProducto
-        );
-
         return;
 
     }
 
 
     const productoExistente =
-        carrito.find(function (item) {
+        carrito.find(function(item) {
 
             return item.id === idProducto;
 
@@ -2191,26 +1498,19 @@ function agregarAlCarrito(idProducto) {
 
             id: producto.id,
 
-            categoria:
-                producto.categoria,
+            categoria: producto.categoria,
 
-            subcategoria:
-                producto.subcategoria,
+            subcategoria: producto.subcategoria,
 
-            nombre:
-                producto.nombre,
+            nombre: producto.nombre,
 
-            precio:
-                producto.precio,
+            precio: producto.precio,
 
-            precioCuarto:
-                producto.precioCuarto,
+            presentacion: producto.presentacion,
 
-            descripcion:
-                producto.descripcion,
+            descripcion: producto.descripcion,
 
-            imagen:
-                producto.imagen,
+            imagen: producto.imagen,
 
             cantidad: 1
 
@@ -2244,10 +1544,6 @@ function actualizarCarrito() {
 
     if (!cartItems) {
 
-        console.warn(
-            "No existe #cartItems."
-        );
-
         return;
 
     }
@@ -2276,10 +1572,12 @@ function actualizarCarrito() {
 
     } else {
 
-        carrito.forEach(function (producto) {
+
+        carrito.forEach(function(producto) {
 
             const item =
                 document.createElement("div");
+
 
             item.className =
                 "cart-item";
@@ -2288,12 +1586,22 @@ function actualizarCarrito() {
             item.innerHTML = `
 
                 <div class="cart-item-name">
+
                     ${producto.nombre}
+
+                    <small>
+                        ${producto.presentacion}
+                    </small>
+
                 </div>
 
+
                 <div class="cart-item-price">
-                    $${Number(producto.precio).toFixed(2)}
+
+                    $${producto.precio.toFixed(2)}
+
                 </div>
+
 
                 <div class="cart-item-actions">
 
@@ -2301,28 +1609,39 @@ function actualizarCarrito() {
 
                         <button
                             type="button"
-                            onclick="cambiarCantidad(${producto.id}, -1)"
+                            onclick="cambiarCantidad(
+                                ${producto.id},
+                                -1
+                            )"
                         >
                             −
                         </button>
+
 
                         <span>
                             ${producto.cantidad}
                         </span>
 
+
                         <button
                             type="button"
-                            onclick="cambiarCantidad(${producto.id}, 1)"
+                            onclick="cambiarCantidad(
+                                ${producto.id},
+                                1
+                            )"
                         >
                             +
                         </button>
 
                     </div>
 
+
                     <button
                         type="button"
                         class="remove-button"
-                        onclick="eliminarDelCarrito(${producto.id})"
+                        onclick="eliminarDelCarrito(
+                            ${producto.id}
+                        )"
                     >
                         ELIMINAR
                     </button>
@@ -2341,28 +1660,32 @@ function actualizarCarrito() {
 
     const cantidadTotal =
         carrito.reduce(
-            function (total, producto) {
+
+            function(total, producto) {
 
                 return total +
                     producto.cantidad;
 
             },
+
             0
+
         );
 
 
     const precioTotal =
         carrito.reduce(
-            function (total, producto) {
+
+            function(total, producto) {
 
                 return total +
-                    (
-                        producto.precio *
-                        producto.cantidad
-                    );
+                    producto.precio *
+                    producto.cantidad;
 
             },
+
             0
+
         );
 
 
@@ -2370,6 +1693,7 @@ function actualizarCarrito() {
 
         cartCount.textContent =
             cantidadTotal;
+
 
         cartCount.style.display =
             cantidadTotal > 0
@@ -2399,7 +1723,7 @@ function cambiarCantidad(
 ) {
 
     const producto =
-        carrito.find(function (item) {
+        carrito.find(function(item) {
 
             return item.id === idProducto;
 
@@ -2431,13 +1755,13 @@ function cambiarCantidad(
 
 
 /* =========================================================
-   ELIMINAR PRODUCTO
+   ELIMINAR
 ========================================================= */
 
 function eliminarDelCarrito(idProducto) {
 
     carrito =
-        carrito.filter(function (producto) {
+        carrito.filter(function(producto) {
 
             return producto.id !== idProducto;
 
@@ -2508,6 +1832,47 @@ function cerrarCarrito() {
 
 
 /* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+function mostrarSeccion(id) {
+
+    const secciones =
+        document.querySelectorAll(
+            ".page-section"
+        );
+
+
+    secciones.forEach(function(seccion) {
+
+        seccion.classList.remove("active");
+
+    });
+
+
+    const seccionActiva =
+        elemento(id);
+
+
+    if (seccionActiva) {
+
+        seccionActiva.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* =========================================================
    WHATSAPP PEDIDOS
 ========================================================= */
 
@@ -2528,7 +1893,7 @@ function pedirPorWhatsApp() {
         "Hola, quiero realizar el siguiente pedido en Megaserigrafica:\n\n";
 
 
-    carrito.forEach(function (producto) {
+    carrito.forEach(function(producto) {
 
         const subtotal =
             producto.precio *
@@ -2536,8 +1901,13 @@ function pedirPorWhatsApp() {
 
 
         mensaje +=
+
             `• ${producto.nombre}\n` +
+
+            `Presentación: ${producto.presentacion}\n` +
+
             `Cantidad: ${producto.cantidad}\n` +
+
             `Subtotal: $${subtotal.toFixed(2)}\n\n`;
 
     });
@@ -2545,21 +1915,24 @@ function pedirPorWhatsApp() {
 
     const total =
         carrito.reduce(
-            function (suma, producto) {
+
+            function(suma, producto) {
 
                 return suma +
-                    (
-                        producto.precio *
-                        producto.cantidad
-                    );
+                    producto.precio *
+                    producto.cantidad;
 
             },
+
             0
+
         );
 
 
     mensaje +=
+
         `TOTAL: $${total.toFixed(2)} MXN\n\n` +
+
         "Quedo atento a la confirmación de disponibilidad.";
 
 
@@ -2624,10 +1997,10 @@ function contactarPedidos() {
 ========================================================= */
 
 console.log(
-    "MEGASERIGRAFICA: catálogo completo cargado correctamente."
+    "MEGASERIGRAFICA: JavaScript cargado correctamente."
 );
 
 console.log(
-    "Total de productos:",
+    "Productos cargados:",
     productos.length
 );
